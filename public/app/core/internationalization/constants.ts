@@ -7,9 +7,10 @@ export const SPANISH_SPAIN = 'es-ES';
 export const GERMAN_GERMANY = 'de-DE';
 export const BRAZILIAN_PORTUGUESE = 'pt-BR';
 export const CHINESE_SIMPLIFIED = 'zh-Hans';
+export const RUSSIAN_RUSSIA = 'ru-RU';
 export const PSEUDO_LOCALE = 'pseudo-LOCALE';
 
-export const DEFAULT_LANGUAGE = ENGLISH_US;
+export const DEFAULT_LANGUAGE = RUSSIAN_RUSSIA;
 
 export type LocaleFileLoader = () => Promise<ResourceKey>;
 
@@ -62,6 +63,14 @@ export const LANGUAGES: LanguageDefinition[] = [
     name: '中文（简体）',
     loader: {
       grafana: () => import('../../../locales/zh-Hans/grafana.json'),
+    },
+  },
+
+  {
+    code: RUSSIAN_RUSSIA,
+    name: 'Русский',
+    loader: {
+      grafana: () => import('../../../locales/ru-RU/grafana.json'),
     },
   },
 
