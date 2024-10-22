@@ -29,7 +29,8 @@ export const quickOptions: TimeOption[] = [
   { from: 'now-1Q/fQ', to: 'now-1Q/fQ', display: 'Previous fiscal quarter' },
   { from: 'now-1y/y', to: 'now-1y/y', display: 'Previous year' },
   { from: 'now-1y/fy', to: 'now-1y/fy', display: 'Previous fiscal year' },
-  { from: 'now/d', to: 'now/d', display: 'Today' },
+  /* { from: 'now/d', to: 'now/d', display: 'Today' }, */
+  { from: 'now/d', to: 'now/d', display: 'Сегодня' },
   { from: 'now/d', to: 'now', display: 'Today so far' },
   { from: 'now/w', to: 'now/w', display: 'This week' },
   { from: 'now/w', to: 'now', display: 'This week so far' },
