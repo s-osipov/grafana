@@ -6,7 +6,6 @@ import * as dateMath from './datemath';
 import { timeZoneAbbrevation, dateTimeFormat, dateTimeFormatTimeAgo } from './formatter';
 import { isDateTime, DateTime, dateTime } from './moment_wrapper';
 import { dateTimeParse } from './parser';
-import { t } from '../../../grafana-ui/src/utils/i18n';
 
 const spans: { [key: string]: { display: string; section?: number } } = {
   s: { display: 'second' },
