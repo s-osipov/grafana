@@ -4,8 +4,6 @@ import { FC } from 'react';
 import { colorManipulator } from '@grafana/data';
 import { useTheme2 } from '@grafana/ui';
 
-import { t } from 'app/core/internationalization';
-
 export interface BrandComponentProps {
   className?: string;
   children?: JSX.Element | JSX.Element[];
