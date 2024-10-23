@@ -62,7 +62,7 @@ export class Branding {
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
   static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
+  static LoginTitle = 'Добро пожаловать';
   static HideEdition = false;
   static GetLoginSubTitle = (): null | string => {
     return null;
