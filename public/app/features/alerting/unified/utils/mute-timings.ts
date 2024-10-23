@@ -4,21 +4,21 @@ import { MuteTimeInterval, TimeInterval, TimeRange } from 'app/plugins/datasourc
 
 import { MuteTimingFields, MuteTimingIntervalFields } from '../types/mute-timing-form';
 
-export const DAYS_OF_THE_WEEK = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+export const DAYS_OF_THE_WEEK = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
 
 export const MONTHS = [
-  'january',
-  'february',
-  'march',
-  'april',
-  'may',
-  'june',
-  'july',
-  'august',
-  'september',
-  'october',
-  'november',
-  'december',
+  'январь',
+  'февраль',
+  'март',
+  'апрель',
+  'май',
+  'июнь',
+  'июль',
+  'август',
+  'сентябрь',
+  'октябрь',
+  'ноябрь',
+  'декабрь',
 ];
 
 export const defaultTimeInterval: MuteTimingIntervalFields = {

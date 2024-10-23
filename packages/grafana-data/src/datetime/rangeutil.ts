@@ -19,13 +19,13 @@ const spans: { [key: string]: { display: string; section?: number } } = {
 
 const rangeOptions: TimeOption[] = [
   { from: 'now/d', to: 'now/d', display: 'Сегодня' },
-  { from: 'now/d', to: 'now', display: 'Today so far' },
+  { from: 'now/d', to: 'now', display: 'Сегодня до сих пор' },
   { from: 'now/w', to: 'now/w', display: 'Текущая неделя' },
-  { from: 'now/w', to: 'now', display: 'This week so far' },
+  { from: 'now/w', to: 'now', display: 'Текущая неделя до сих пор' },
   { from: 'now/M', to: 'now/M', display: 'Текущий месяц' },
-  { from: 'now/M', to: 'now', display: 'This month so far' },
+  { from: 'now/M', to: 'now', display: 'Текущий месяц до сих пор' },
   { from: 'now/y', to: 'now/y', display: 'Текущий год' },
-  { from: 'now/y', to: 'now', display: 'This year so far' },
+  { from: 'now/y', to: 'now', display: 'Текущий год до сих пор' },
 
   { from: 'now-1d/d', to: 'now-1d/d', display: 'Вчера' },
   {
@@ -36,13 +36,13 @@ const rangeOptions: TimeOption[] = [
   {
     from: 'now-7d/d',
     to: 'now-7d/d',
-    display: 'This day last week',
+    display: 'Этот день прошлой недели',
   },
-  { from: 'now-1w/w', to: 'now-1w/w', display: 'Previous week' },
-  { from: 'now-1M/M', to: 'now-1M/M', display: 'Previous month' },
-  { from: 'now-1Q/fQ', to: 'now-1Q/fQ', display: 'Previous fiscal quarter' },
-  { from: 'now-1y/y', to: 'now-1y/y', display: 'Previous year' },
-  { from: 'now-1y/fy', to: 'now-1y/fy', display: 'Previous fiscal year' },
+  { from: 'now-1w/w', to: 'now-1w/w', display: 'Предыдущая неделя' },
+  { from: 'now-1M/M', to: 'now-1M/M', display: 'Предыдущий месяц' },
+  { from: 'now-1Q/fQ', to: 'now-1Q/fQ', display: 'Предыдущий финансовый квартал' },
+  { from: 'now-1y/y', to: 'now-1y/y', display: 'Предыдущий год' },
+  { from: 'now-1y/fy', to: 'now-1y/fy', display: 'Предыдущий финансовый год' },
 
   { from: 'now-5m', to: 'now', display: '5 минут' },
   { from: 'now-15m', to: 'now', display: '15 минут' },
@@ -60,10 +60,10 @@ const rangeOptions: TimeOption[] = [
   { from: 'now-1y', to: 'now', display: '1 год' },
   { from: 'now-2y', to: 'now', display: '2 года' },
   { from: 'now-5y', to: 'now', display: '5 лет' },
-  { from: 'now/fQ', to: 'now', display: 'This fiscal quarter so far' },
-  { from: 'now/fQ', to: 'now/fQ', display: 'This fiscal quarter' },
-  { from: 'now/fy', to: 'now', display: 'This fiscal year so far' },
-  { from: 'now/fy', to: 'now/fy', display: 'This fiscal year' },
+  { from: 'now/fQ', to: 'now', display: 'Текущий финансовый квартал до сих пор' },
+  { from: 'now/fQ', to: 'now/fQ', display: 'Текущий финансовый квартал' },
+  { from: 'now/fy', to: 'now', display: 'Текущий финансовый год до сих пор' },
+  { from: 'now/fy', to: 'now/fy', display: 'Текущий финансовый год' },
 ];
 
 const hiddenRangeOptions: TimeOption[] = [
