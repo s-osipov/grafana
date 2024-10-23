@@ -67,23 +67,23 @@ const rangeOptions: TimeOption[] = [
 ];
 
 const hiddenRangeOptions: TimeOption[] = [
-  { from: 'now', to: 'now+1m', display: 'Next minute' },
-  { from: 'now', to: 'now+5m', display: 'Next 5 minutes' },
-  { from: 'now', to: 'now+15m', display: 'Next 15 minutes' },
-  { from: 'now', to: 'now+30m', display: 'Next 30 minutes' },
-  { from: 'now', to: 'now+1h', display: 'Next hour' },
-  { from: 'now', to: 'now+3h', display: 'Next 3 hours' },
-  { from: 'now', to: 'now+6h', display: 'Next 6 hours' },
-  { from: 'now', to: 'now+12h', display: 'Next 12 hours' },
-  { from: 'now', to: 'now+24h', display: 'Next 24 hours' },
-  { from: 'now', to: 'now+2d', display: 'Next 2 days' },
-  { from: 'now', to: 'now+7d', display: 'Next 7 days' },
-  { from: 'now', to: 'now+30d', display: 'Next 30 days' },
-  { from: 'now', to: 'now+90d', display: 'Next 90 days' },
-  { from: 'now', to: 'now+6M', display: 'Next 6 months' },
-  { from: 'now', to: 'now+1y', display: 'Next year' },
-  { from: 'now', to: 'now+2y', display: 'Next 2 years' },
-  { from: 'now', to: 'now+5y', display: 'Next 5 years' },
+  { from: 'now', to: 'now+1m', display: 'Следующая минута' },
+  { from: 'now', to: 'now+5m', display: 'Следующие 5 минут' },
+  { from: 'now', to: 'now+15m', display: 'Следующие 15 минут' },
+  { from: 'now', to: 'now+30m', display: 'Следующие 30 минут' },
+  { from: 'now', to: 'now+1h', display: 'Следующий час' },
+  { from: 'now', to: 'now+3h', display: 'Следующие 3 часа' },
+  { from: 'now', to: 'now+6h', display: 'Следующие 6 часов' },
+  { from: 'now', to: 'now+12h', display: 'Следующие 12 часов' },
+  { from: 'now', to: 'now+24h', display: 'Следующие 24 часа' },
+  { from: 'now', to: 'now+2d', display: 'Следующие 2 дня' },
+  { from: 'now', to: 'now+7d', display: 'Следующие 7 дней' },
+  { from: 'now', to: 'now+30d', display: 'Следующие 30 дней' },
+  { from: 'now', to: 'now+90d', display: 'Следующие 90 дней' },
+  { from: 'now', to: 'now+6M', display: 'Следующие 6 месяцев' },
+  { from: 'now', to: 'now+1y', display: 'Следующий год' },
+  { from: 'now', to: 'now+2y', display: 'Следующие 2 года' },
+  { from: 'now', to: 'now+5y', display: 'Следующие 5 лет' },
 ];
 
 const rangeIndex: Record<string, TimeOption> = {};
@@ -123,7 +123,7 @@ export function describeTextRange(expr: string): TimeOption {
     const amount = parseInt(parts[2], 10);
     const span = spans[unit];
     if (span) {
-      opt.display = isLast ? 'Last ' : 'Next ';
+      opt.display = isLast ? 'Последний ' : 'Следующий ';
       opt.display += amount + ' ' + span.display;
       opt.section = span.section;
       if (amount > 1) {
