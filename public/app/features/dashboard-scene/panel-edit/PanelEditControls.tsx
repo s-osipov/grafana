@@ -14,7 +14,7 @@ export function PanelEditControls({ panelEditor }: Props) {
     <>
       {dataPane && (
         <InlineSwitch
-          label="Табличный вид"        //label="Table view"
+          label="Table view"
           showLabel={true}
           id="table-view"
           value={tableView ? true : false}
