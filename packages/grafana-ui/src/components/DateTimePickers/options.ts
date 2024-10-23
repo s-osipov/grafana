@@ -2,11 +2,12 @@ import { TimeOption } from '@grafana/data';
 
 import { ComboboxOption } from '../Combobox/Combobox';
 
-import { t } from '../../../../grafana-ui/src/utils/i18n';
+//import { t } from '../../../../grafana-ui/src/utils/i18n';
+import { t } from '../../../../../public/app/core/internationalization';
 
 export const quickOptions: TimeOption[] = [
   { from: 'now-5m', to: 'now', display: t('time-picker.options.last-5-minutes', 'Last 5 minutes')},
-  { from: 'now-15m', to: 'now', display: t('time-picker.options.last-15-minutes', 'Last 15 minutes')},
+  { from: 'now-15m', to: 'now', display: t('time-picker.options.last-15-minutes', 'Последние 15 минут')},
   { from: 'now-30m', to: 'now', display: 'Last 30 minutes' },
   { from: 'now-1h', to: 'now', display: 'Last 1 hour' },
   { from: 'now-3h', to: 'now', display: 'Last 3 hours' },

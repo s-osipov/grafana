@@ -4,6 +4,8 @@ import { FC } from 'react';
 import { colorManipulator } from '@grafana/data';
 import { useTheme2 } from '@grafana/ui';
 
+import { t } from 'app/core/internationalization';
+
 export interface BrandComponentProps {
   className?: string;
   children?: JSX.Element | JSX.Element[];
@@ -60,7 +62,7 @@ export class Branding {
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
   static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
+  static LoginTitle = t('login.title', 'Welcome to Grafana')//'Welcome to Grafana';
   static HideEdition = false;
   static GetLoginSubTitle = (): null | string => {
     return null;
