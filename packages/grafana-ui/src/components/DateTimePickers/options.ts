@@ -16,7 +16,7 @@ export const quickOptions: TimeOption[] = [
   { from: 'now-24h', to: 'now', display: '24 часа' },
   { from: 'now-2d', to: 'now', display: '2 дня' },
   { from: 'now-7d', to: 'now', display: '7 дней' },
-  { from: 'now-30d', to: 'now', display: '30 дней},
+  { from: 'now-30d', to: 'now', display: '30 дней'},
   { from: 'now-90d', to: 'now', display: '90 дней' },
   { from: 'now-6M', to: 'now', display: '6 месяцев' },
   { from: 'now-1y', to: 'now', display: 'Год' },
