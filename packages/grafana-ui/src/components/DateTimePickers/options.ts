@@ -5,8 +5,8 @@ import { ComboboxOption } from '../Combobox/Combobox';
 import { t } from '../../../../grafana-ui/src/utils/i18n';
 
 export const quickOptions: TimeOption[] = [
-  { from: 'now-5m', to: 'now', display: t('time-options.last-5-minutes', 'Last 5 minutes')},
-  { from: 'now-15m', to: 'now', display: t('time-options.last-15-minutes', 'Last 15 minutes')},
+  { from: 'now-5m', to: 'now', display: t('time-picker.options.last-5-minutes', 'Last 5 minutes')},
+  { from: 'now-15m', to: 'now', display: t('time-picker.options.last-15-minutes', 'Last 15 minutes')},
   { from: 'now-30m', to: 'now', display: 'Last 30 minutes' },
   { from: 'now-1h', to: 'now', display: 'Last 1 hour' },
   { from: 'now-3h', to: 'now', display: 'Last 3 hours' },
@@ -29,8 +29,8 @@ export const quickOptions: TimeOption[] = [
   { from: 'now-1Q/fQ', to: 'now-1Q/fQ', display: 'Previous fiscal quarter' },
   { from: 'now-1y/y', to: 'now-1y/y', display: 'Previous year' },
   { from: 'now-1y/fy', to: 'now-1y/fy', display: 'Previous fiscal year' },
-  /* { from: 'now/d', to: 'now/d', display: 'Today' }, */
-  { from: 'now/d', to: 'now/d', display: 'Сегодня' },
+  { from: 'now/d', to: 'now/d', display: 'Today' },
+  /* { from: 'now/d', to: 'now/d', display: 'Сегодня' }, */
   { from: 'now/d', to: 'now', display: 'Today so far' },
   { from: 'now/w', to: 'now/w', display: 'This week' },
   { from: 'now/w', to: 'now', display: 'This week so far' },
