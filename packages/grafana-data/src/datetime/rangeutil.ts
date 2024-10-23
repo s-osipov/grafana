@@ -237,30 +237,30 @@ export function isRelativeTimeRange(raw: RawTimeRange): boolean {
 export function secondsToHms(seconds: number): string {
   const numYears = Math.floor(seconds / 31536000);
   if (numYears) {
-    return numYears + 'y';
+    return numYears + 'г';
   }
   const numDays = Math.floor((seconds % 31536000) / 86400);
   if (numDays) {
-    return numDays + 'd';
+    return numDays + 'д';
   }
   const numHours = Math.floor(((seconds % 31536000) % 86400) / 3600);
   if (numHours) {
-    return numHours + 'h';
+    return numHours + 'ч';
   }
   const numMinutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
   if (numMinutes) {
-    return numMinutes + 'm';
+    return numMinutes + 'м';
   }
   const numSeconds = Math.floor((((seconds % 31536000) % 86400) % 3600) % 60);
   if (numSeconds) {
-    return numSeconds + 's';
+    return numSeconds + 'с';
   }
   const numMilliseconds = Math.floor(seconds * 1000.0);
   if (numMilliseconds) {
-    return numMilliseconds + 'ms';
+    return numMilliseconds + 'мс';
   }
 
-  return 'less than a millisecond'; //'just now' //or other string you like;
+  return 'меньше миллисекунды'; //'just now' //or other string you like;
 }
 
 // Format timeSpan (in sec) to string used in log's meta info
@@ -270,14 +270,14 @@ export function msRangeToTimeString(rangeMs: number): string {
   const h = Math.floor(rangeSec / 60 / 60);
   const m = Math.floor(rangeSec / 60) - h * 60;
   const s = Number((rangeSec % 60).toFixed());
-  let formattedH = h ? h + 'h' : '';
-  let formattedM = m ? m + 'min' : '';
-  let formattedS = s ? s + 'sec' : '';
+  let formattedH = h ? h + 'ч' : '';
+  let formattedM = m ? m + 'мин' : '';
+  let formattedS = s ? s + 'сек' : '';
 
   formattedH && formattedM ? (formattedH = formattedH + ' ') : (formattedH = formattedH);
   (formattedM || formattedH) && formattedS ? (formattedM = formattedM + ' ') : (formattedM = formattedM);
 
-  return formattedH + formattedM + formattedS || 'less than 1sec';
+  return formattedH + formattedM + formattedS || 'меньше 1 сек';
 }
 
 export function calculateInterval(range: TimeRange, resolution: number, lowLimitInterval?: string): IntervalValues {
