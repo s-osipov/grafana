@@ -346,7 +346,7 @@ const DateTimeCalendar = React.forwardRef<HTMLDivElement, DateTimeCalendarProps>
           prevLabel={<Icon name="angle-left" />}
           prevAriaLabel="Previous month"
           onChange={onChangeDate}
-          locale="en"
+          locale="ru"
           className={calendarStyles.body}
           tileClassName={calendarStyles.title}
           maxDate={maxDate}

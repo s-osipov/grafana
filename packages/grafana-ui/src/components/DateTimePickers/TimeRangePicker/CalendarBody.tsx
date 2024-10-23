@@ -38,7 +38,7 @@ export function Body({ onChange, from, to, timeZone, weekStart }: TimePickerCale
       prevLabel={<Icon name="angle-left" />}
       prevAriaLabel={t('time-picker.calendar.previous-month', 'Previous month')}
       onChange={onCalendarChange}
-      locale="en"
+      locale="ru"
       calendarType={weekStartMap[weekStartValue]}
     />
   );
