@@ -19,7 +19,7 @@ export function ScopesDashboardsTreeDashboardItem({ dashboard }: ScopesDashboard
   return (
     <Link
       key={dashboard.dashboard}
-      to={urlUtil.renderUrl(`/d/${dashboard.dashboard}/`, {...queryParams, scenes: false})}
+      to={urlUtil.renderUrl(`/d/${dashboard.dashboard}/`, queryParams)}
       className={styles.container}
       data-testid={`scopes-dashboards-${dashboard.dashboard}`}
       role="treeitem"
