@@ -18,14 +18,14 @@ export type DashboardPageProxyProps = Omit<
 // This proxy component is used for Dashboard -> Scenes migration.
 // It will render DashboardScenePage if the user is only allowed to view the dashboard.
 function DashboardPageProxy(props: DashboardPageProxyProps) {
-  const forceScenes = props.queryParams.scenes === true;
-  const forceOld = props.queryParams.scenes === false;
+  /* const forceScenes = props.queryParams.scenes === true;
+  const forceOld = props.queryParams.scenes === false; */
   const params = useParams<DashboardPageParams>();
   const location = useLocation();
 
-  if (forceScenes || (config.featureToggles.dashboardScene && !forceOld)) {
+ /*  if (forceScenes || (config.featureToggles.dashboardScene && !forceOld)) {
     return <DashboardScenePage {...props} />;
-  }
+  } */
 
   const stateManager = getDashboardScenePageStateManager();
   const isScenesSupportedRoute = Boolean(

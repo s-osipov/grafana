@@ -15,7 +15,6 @@ export function ScopesDashboardsTreeDashboardItem({ dashboard }: ScopesDashboard
   const styles = useStyles2(getStyles);
 
   const [queryParams] = useQueryParams();
-  console.log('queryParams', queryParams);
 
   return (
     <Link
