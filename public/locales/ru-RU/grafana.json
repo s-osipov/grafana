@@ -290,7 +290,7 @@
     "simpleCondition": {
       "alertCondition": "Состояние оповещения",
       "ofQuery": {
-        "To": "К"
+        "To": "До"
       }
     }
   },
@@ -2683,13 +2683,13 @@
       "from-input": "От",
       "open-input-calendar": "Открыть календарь",
       "range-error": "«От» не может стоять после «Кому».",
-      "to-input": "К"
+      "to-input": "До"
     },
     "range-picker": {
       "backwards-time-aria-label": "Переместить временной диапазон назад",
       "current-time-selected": "Выбран временной диапазон: {{currentTimeRange}}",
       "forwards-time-aria-label": "Переместить временной диапазон вперед",
-      "to": "к",
+      "to": "до",
       "zoom-out-button": "Уменьшить временной диапазон",
       "zoom-out-tooltip": "Уменьшить временной диапазон <1></1> CTRL+Z"
     },

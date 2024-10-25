@@ -24,7 +24,7 @@ export const quickOptions: TimeOption[] = [
   { from: 'now-5y', to: 'now', display: '5 лет' },
   { from: 'now-1d/d', to: 'now-1d/d', display: 'Вчера' },
   { from: 'now-2d/d', to: 'now-2d/d', display: 'Позавчера' },
-  { from: 'now-7d/d', to: 'now-7d/d', display: 'Этот день прошлой недели' },
+  /* { from: 'now-7d/d', to: 'now-7d/d', display: 'Этот день прошлой недели' }, */
   { from: 'now-1w/w', to: 'now-1w/w', display: 'Предыдущая неделя' },
   { from: 'now-1M/M', to: 'now-1M/M', display: 'Предыдущий месяц' },
   { from: 'now-1Q/fQ', to: 'now-1Q/fQ', display: 'Предыдущий финансовый квартал' },
@@ -32,16 +32,16 @@ export const quickOptions: TimeOption[] = [
   { from: 'now-1y/fy', to: 'now-1y/fy', display: 'Предыдущий финансовый год' },
  /*  { from: 'now/d', to: 'now/d', display: 'Today' }, */
    { from: 'now/d', to: 'now/d', display: 'Сегодня' },
-  { from: 'now/d', to: 'now', display: 'Сегодня до сих пор' },
+ /*  { from: 'now/d', to: 'now', display: 'Сегодня до сих пор' }, */
   { from: 'now/w', to: 'now/w', display: 'Текущая неделя' },
-  { from: 'now/w', to: 'now', display: 'Текущая неделя до сих пор' },
+ /*  { from: 'now/w', to: 'now', display: 'Текущая неделя до сих пор' }, */
   { from: 'now/M', to: 'now/M', display: 'Текущий месяц' },
-  { from: 'now/M', to: 'now', display: 'Текущий месяц до сих пор' },
+  /* { from: 'now/M', to: 'now', display: 'Текущий месяц до сих пор' }, */
   { from: 'now/y', to: 'now/y', display: 'Текущий год' },
-  { from: 'now/y', to: 'now', display: 'Текущий год до сих пор' },
-  { from: 'now/fQ', to: 'now', display: 'Текущий финансовый квартал до сих пор' },
+  /* { from: 'now/y', to: 'now', display: 'Текущий год до сих пор' }, */
+ /*  { from: 'now/fQ', to: 'now', display: 'Текущий финансовый квартал до сих пор' }, */
   { from: 'now/fQ', to: 'now/fQ', display: 'Текущий финансовый квартал' },
-  { from: 'now/fy', to: 'now', display: 'Текущий финансовый год до сих пор' },
+  /* { from: 'now/fy', to: 'now', display: 'Текущий финансовый год до сих пор' }, */
   { from: 'now/fy', to: 'now/fy', display: 'Текущий финансовый год' },
 ];
 
