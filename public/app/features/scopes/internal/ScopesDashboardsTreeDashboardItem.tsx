@@ -15,11 +15,12 @@ export function ScopesDashboardsTreeDashboardItem({ dashboard }: ScopesDashboard
   const styles = useStyles2(getStyles);
 
   const [queryParams] = useQueryParams();
+  console.log('queryParams', queryParams);
 
   return (
     <Link
       key={dashboard.dashboard}
-      to={urlUtil.renderUrl(`/d/${dashboard.dashboard}/`, queryParams) + '&scenes=false'}
+      to={urlUtil.renderUrl(`/d/${dashboard.dashboard}/`, queryParams)}
       className={styles.container}
       data-testid={`scopes-dashboards-${dashboard.dashboard}`}
       role="treeitem"
