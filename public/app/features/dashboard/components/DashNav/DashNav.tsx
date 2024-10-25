@@ -224,7 +224,7 @@ export const DashNav = memo<Props>((props) => {
       );
     }
 
-    if (isDevEnv && config.featureToggles.dashboardScene) {
+    /* if (isDevEnv && config.featureToggles.dashboardScene) {
       buttons.push(
         <DashNavButton
           key="button-scenes"
@@ -235,7 +235,7 @@ export const DashNav = memo<Props>((props) => {
           }}
         />
       );
-    }
+    } */
 
     addCustomContent(dynamicDashNavActions.left, buttons);
     return buttons;
