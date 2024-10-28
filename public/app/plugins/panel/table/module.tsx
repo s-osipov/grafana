@@ -27,8 +27,8 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
       builder
         .addNumberInput({
           path: 'minWidth',
-          name: 'Minimum column width',
-          description: 'The minimum width for column auto resizing',
+          name: 'Минимальная ширина столбца',
+          description: 'Минимальная ширина для автоматического изменения размера столбца',
           settings: {
             placeholder: '150',
             min: 50,
@@ -39,7 +39,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
         })
         .addNumberInput({
           path: 'width',
-          name: 'Column width',
+          name: 'Ширина столбца',
           settings: {
             placeholder: 'auto',
             min: 20,
@@ -50,13 +50,13 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
         })
         .addRadio({
           path: 'align',
-          name: 'Column alignment',
+          name: 'Выравнивание столбцов',
           settings: {
             options: [
-              { label: 'Auto', value: 'auto' },
-              { label: 'Left', value: 'left' },
-              { label: 'Center', value: 'center' },
-              { label: 'Right', value: 'right' },
+              { label: 'Авто', value: 'auto' },
+              { label: 'Слева', value: 'left' },
+              { label: 'По центру', value: 'center' },
+              { label: 'Справа', value: 'right' },
             ],
           },
           defaultValue: defaultTableFieldOptions.align,
@@ -64,7 +64,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
         .addCustomEditor<void, TableCellOptions>({
           id: 'cellOptions',
           path: 'cellOptions',
-          name: 'Cell type',
+          name: 'Тип ячейки',
           editor: TableCellOptionEditor,
           override: TableCellOptionEditor,
           defaultValue: defaultTableFieldOptions.cellOptions,
@@ -74,8 +74,8 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
         })
         .addBooleanSwitch({
           path: 'inspect',
-          name: 'Cell value inspect',
-          description: 'Enable cell value inspection in a modal window',
+          name: 'Проверка значения ячейки',
+          description: 'Включить проверку значений ячеек в модальном окне',
           defaultValue: false,
           category: cellCategory,
           showIf: (cfg) => {
@@ -89,13 +89,13 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
         })
         .addBooleanSwitch({
           path: 'filterable',
-          name: 'Column filter',
-          description: 'Enables/disables field filters in table',
+          name: 'Фильтр столбца',
+          description: 'Включает/выключает фильтры полей в таблице',
           defaultValue: defaultTableFieldOptions.filterable,
         })
         .addBooleanSwitch({
           path: 'hidden',
-          name: 'Hide in table',
+          name: 'Скрыть в таблице',
           defaultValue: undefined,
           hideFromDefaults: true,
         });
@@ -105,33 +105,33 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
     builder
       .addBooleanSwitch({
         path: 'showHeader',
-        name: 'Show table header',
+        name: 'Показать заголовок таблицы',
         defaultValue: defaultOptions.showHeader,
       })
       .addRadio({
         path: 'cellHeight',
-        name: 'Cell height',
+        name: 'Высота ячейки',
         defaultValue: defaultOptions.cellHeight,
         settings: {
           options: [
-            { value: TableCellHeight.Sm, label: 'Small' },
-            { value: TableCellHeight.Md, label: 'Medium' },
-            { value: TableCellHeight.Lg, label: 'Large' },
+            { value: TableCellHeight.Sm, label: 'Маленькая' },
+            { value: TableCellHeight.Md, label: 'Средняя' },
+            { value: TableCellHeight.Lg, label: 'Большая' },
           ],
         },
       })
       .addBooleanSwitch({
         path: 'footer.show',
         category: [footerCategory],
-        name: 'Show table footer',
+        name: 'Показать футер таблицы',
         defaultValue: defaultOptions.footer?.show,
       })
       .addCustomEditor({
         id: 'footer.reducer',
         category: [footerCategory],
         path: 'footer.reducer',
-        name: 'Calculation',
-        description: 'Choose a reducer function / calculation',
+        name: 'Расчет',
+        description: 'Выберите функцию редуктора/расчет',
         editor: standardEditorsRegistry.get('stats-picker').editor,
         defaultValue: [ReducerID.sum],
         showIf: (cfg) => cfg.footer?.show,
@@ -139,20 +139,20 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
       .addBooleanSwitch({
         path: 'footer.countRows',
         category: [footerCategory],
-        name: 'Count rows',
-        description: 'Display a single count for all data rows',
+        name: 'Количество строк',
+        description: 'Отображать один счетчик для всех строк данных',
         defaultValue: defaultOptions.footer?.countRows,
         showIf: (cfg) => cfg.footer?.reducer?.length === 1 && cfg.footer?.reducer[0] === ReducerID.count,
       })
       .addMultiSelect({
         path: 'footer.fields',
         category: [footerCategory],
-        name: 'Fields',
-        description: 'Select the fields that should be calculated',
+        name: 'Поля',
+        description: 'Выберите поля, которые необходимо рассчитать',
         settings: {
           allowCustomValue: false,
           options: [],
-          placeholder: 'All Numeric Fields',
+          placeholder: 'Все числовые поля',
           getOptions: async (context: FieldOverrideContext) => {
             const options = [];
             if (context && context.data && context.data.length > 0) {
@@ -174,7 +174,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
       .addCustomEditor({
         id: 'footer.enablePagination',
         path: 'footer.enablePagination',
-        name: 'Enable pagination',
+        name: 'Включить пагинацию',
         editor: PaginationEditor,
       });
   })
