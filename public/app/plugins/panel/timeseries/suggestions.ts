@@ -230,7 +230,7 @@ export function getPrepareTimeseriesSuggestion(panelId: number): VisualizationSu
     });
 
     return {
-      name: 'Transform to wide time series format',
+      name: 'Преобразование в широкий формат временных рядов',
       pluginId: 'timeseries',
       transformations,
     };

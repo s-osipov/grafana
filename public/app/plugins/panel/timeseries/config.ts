@@ -42,7 +42,7 @@ export const defaultGraphConfig: GraphFieldConfig = {
   axisBorderShow: false,
 };
 
-const categoryStyles = ['Graph styles'];
+const categoryStyles = ['Стили графиков'];
 
 export type NullEditorSettings = { isTime: boolean };
 
@@ -64,7 +64,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
       builder
         .addRadio({
           path: 'drawStyle',
-          name: 'Style',
+          name: 'Стиль',
           category: categoryStyles,
           defaultValue: cfg.drawStyle,
           settings: {
@@ -73,7 +73,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
         })
         .addRadio({
           path: 'lineInterpolation',
-          name: 'Line interpolation',
+          name: 'Линейная интерполяция',
           category: categoryStyles,
           defaultValue: cfg.lineInterpolation,
           settings: {
@@ -83,7 +83,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
         })
         .addRadio({
           path: 'barAlignment',
-          name: 'Bar alignment',
+          name: 'Выравнивание столбцов',
           category: categoryStyles,
           defaultValue: cfg.barAlignment,
           settings: {
@@ -100,39 +100,39 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
             min: 0.1,
             max: 1.0,
             step: 0.1,
-            ariaLabelForHandle: 'Bar width factor',
+            ariaLabelForHandle: 'Коэффициент ширины столбца',
           },
           showIf: (config) => config.drawStyle === GraphDrawStyle.Bars,
         })
         .addSliderInput({
           path: 'lineWidth',
-          name: 'Line width',
+          name: 'Ширина линии',
           category: categoryStyles,
           defaultValue: cfg.lineWidth,
           settings: {
             min: 0,
             max: 10,
             step: 1,
-            ariaLabelForHandle: 'Line width',
+            ariaLabelForHandle: 'Ширина линии',
           },
           showIf: (config) => config.drawStyle !== GraphDrawStyle.Points,
         })
         .addSliderInput({
           path: 'fillOpacity',
-          name: 'Fill opacity',
+          name: 'Заполнить непрозрачность',
           category: categoryStyles,
           defaultValue: cfg.fillOpacity,
           settings: {
             min: 0,
             max: 100,
             step: 1,
-            ariaLabelForHandle: 'Fill opacity',
+            ariaLabelForHandle: 'Заполнить непрозрачность',
           },
           showIf: (config) => config.drawStyle !== GraphDrawStyle.Points,
         })
         .addRadio({
           path: 'gradientMode',
-          name: 'Gradient mode',
+          name: 'Режим градиента',
           category: categoryStyles,
           defaultValue: graphFieldOptions.fillGradient[0].value,
           settings: {
@@ -142,7 +142,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
         })
         .addFieldNamePicker({
           path: 'fillBelowTo',
-          name: 'Fill below to',
+          name: 'Заполнить ниже',
           category: categoryStyles,
           hideFromDefaults: true,
           settings: {
@@ -152,7 +152,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
         .addCustomEditor<void, LineStyle>({
           id: 'lineStyle',
           path: 'lineStyle',
-          name: 'Line style',
+          name: 'Стиль линии',
           category: categoryStyles,
           showIf: (config) => config.drawStyle === GraphDrawStyle.Line,
           editor: LineStyleEditor,
@@ -163,7 +163,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
         .addCustomEditor<NullEditorSettings, boolean>({
           id: 'spanNulls',
           path: 'spanNulls',
-          name: 'Connect null values',
+          name: 'Подключить нулевые значения',
           category: categoryStyles,
           defaultValue: false,
           editor: SpanNullsEditor,
@@ -176,7 +176,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
         .addCustomEditor<NullEditorSettings, boolean>({
           id: 'insertNulls',
           path: 'insertNulls',
-          name: 'Disconnect values',
+          name: 'Отключить значения',
           category: categoryStyles,
           defaultValue: false,
           editor: InsertNullsEditor,
@@ -188,7 +188,7 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
         })
         .addRadio({
           path: 'showPoints',
-          name: 'Show points',
+          name: 'Показать точки',
           category: categoryStyles,
           defaultValue: graphFieldOptions.showPoints[0].value,
           settings: {
@@ -198,14 +198,14 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
         })
         .addSliderInput({
           path: 'pointSize',
-          name: 'Point size',
+          name: 'Размер точки',
           category: categoryStyles,
           defaultValue: 5,
           settings: {
             min: 1,
             max: 40,
             step: 1,
-            ariaLabelForHandle: 'Point size',
+            ariaLabelForHandle: 'Размер точки',
           },
           showIf: (config) => config.showPoints !== VisibilityMode.Never || config.drawStyle === GraphDrawStyle.Points,
         });
@@ -214,19 +214,19 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
 
       builder.addSelect({
         category: categoryStyles,
-        name: 'Transform',
+        name: 'Трансформация',
         path: 'transform',
         settings: {
           options: [
             {
-              label: 'Constant',
+              label: 'Постоянная',
               value: GraphTransform.Constant,
-              description: 'The first value will be shown as a constant line',
+              description: 'Первое значение будет отображаться в виде постоянной линии',
             },
             {
-              label: 'Negative Y',
+              label: 'Отрицательная Y',
               value: GraphTransform.NegativeY,
-              description: 'Flip the results to negative values on the y axis',
+              description: 'Отразите результаты на отрицательные значения по оси Y.',
             },
           ],
           isClearable: true,
@@ -240,8 +240,8 @@ export function getGraphFieldConfig(cfg: GraphFieldConfig, isTime = true): SetFi
       builder.addCustomEditor({
         id: 'thresholdsStyle',
         path: 'thresholdsStyle',
-        name: 'Show thresholds',
-        category: ['Thresholds'],
+        name: 'Показать пороги',
+        category: ['Пороги'],
         defaultValue: { mode: GraphThresholdsStyleMode.Off },
         settings: {
           options: graphFieldOptions.thresholdsDisplayModes,

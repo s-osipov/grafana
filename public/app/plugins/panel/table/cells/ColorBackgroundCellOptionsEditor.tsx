@@ -32,7 +32,7 @@ export const ColorBackgroundCellOptionsEditor = ({
   };
 
   const label = (
-    <Label description="Если выделенный текст будет перенесен по ширине текста в настроенном столбце">
+    <Label description="Если отмечено, текст будет перенесен по ширине текста в настроенном столбце">
       {'Перенос текста '}
       <Badge text="Alpha" color="blue" style={{ fontSize: '11px', marginLeft: '5px', lineHeight: '1.2' }} />
     </Label>

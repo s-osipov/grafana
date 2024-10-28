@@ -5,15 +5,15 @@ import { InputPrefix, NullsThresholdInput } from './NullsThresholdInput';
 
 const GAPS_OPTIONS: Array<SelectableValue<boolean | number>> = [
   {
-    label: 'Never',
+    label: 'Никогда',
     value: false,
   },
   {
-    label: 'Always',
+    label: 'Всегда',
     value: true,
   },
   {
-    label: 'Threshold',
+    label: 'Порог',
     value: 3600000, // 1h
   },
 ];

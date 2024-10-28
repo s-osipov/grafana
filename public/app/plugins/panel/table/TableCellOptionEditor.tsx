@@ -82,14 +82,14 @@ export const TableCellOptionEditor = ({ value, onChange }: Props) => {
 };
 
 const cellDisplayModeOptions: Array<SelectableValue<TableCellOptions>> = [
-  { value: { type: TableCellDisplayMode.Auto }, label: 'Auto' },
-  { value: { type: TableCellDisplayMode.Sparkline }, label: 'Sparkline' },
-  { value: { type: TableCellDisplayMode.ColorText }, label: 'Colored text' },
-  { value: { type: TableCellDisplayMode.ColorBackground }, label: 'Colored background' },
-  { value: { type: TableCellDisplayMode.Gauge }, label: 'Gauge' },
-  { value: { type: TableCellDisplayMode.DataLinks }, label: 'Data links' },
-  { value: { type: TableCellDisplayMode.JSONView }, label: 'JSON View' },
-  { value: { type: TableCellDisplayMode.Image }, label: 'Image' },
+  { value: { type: TableCellDisplayMode.Auto }, label: 'Авто' },
+  { value: { type: TableCellDisplayMode.Sparkline }, label: 'Спарклайн' },
+  { value: { type: TableCellDisplayMode.ColorText }, label: 'Цветной текст' },
+  { value: { type: TableCellDisplayMode.ColorBackground }, label: 'Цветной фон' },
+  { value: { type: TableCellDisplayMode.Gauge }, label: 'Загрузка' },
+  { value: { type: TableCellDisplayMode.DataLinks }, label: 'Ссылки на данные' },
+  { value: { type: TableCellDisplayMode.JSONView }, label: 'JSON' },
+  { value: { type: TableCellDisplayMode.Image }, label: 'Изображение' },
 ];
 
 const getStyles = (theme: GrafanaTheme2) => ({

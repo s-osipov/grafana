@@ -33,7 +33,7 @@ function getChartCellConfig(cfg: GraphFieldConfig): SetFieldConfigOptionsArgs<Gr
       graphFieldConfig.useCustomConfig?.(builder);
       builder.addBooleanSwitch({
         path: 'hideValue',
-        name: 'Hide value',
+        name: 'Скрыть значение',
       });
     },
   };

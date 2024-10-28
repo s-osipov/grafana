@@ -14,8 +14,8 @@ export const AutoCellOptionsEditor = ({
   };
 
   const label = (
-    <Label description="If selected text will be wrapped to the width of text in the configured column">
-      {'Wrap text '}
+    <Label description="Если отмечено, текст будет перенесен по ширине текста в настроенном столбце">
+      {'Перенос текста'}
       <Badge text="Alpha" color="blue" style={{ fontSize: '11px', marginLeft: '5px', lineHeight: '1.2' }} />
     </Label>
   );

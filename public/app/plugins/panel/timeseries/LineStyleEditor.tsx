@@ -8,15 +8,15 @@ type LineFill = 'solid' | 'dash' | 'dot';
 
 const lineFillOptions: Array<SelectableValue<LineFill>> = [
   {
-    label: 'Solid',
+    label: 'Сплошная',
     value: 'solid',
   },
   {
-    label: 'Dash',
+    label: 'Пунктир',
     value: 'dash',
   },
   {
-    label: 'Dots',
+    label: 'Точки',
     value: 'dot',
   },
 ];
@@ -103,7 +103,7 @@ export const LineStyleEditor = ({ value, onChange }: Props) => {
                 dash: parseText(v.value ?? ''),
               });
             }}
-            formatCreateLabel={(t) => `Segments: ${parseText(t).join(', ')}`}
+            formatCreateLabel={(t) => `Сегменты: ${parseText(t).join(', ')}`}
           />
           <div>
             &nbsp;

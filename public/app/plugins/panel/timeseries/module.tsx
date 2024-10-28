@@ -17,9 +17,9 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TimeSeriesPanel)
 
     builder.addCustomEditor({
       id: 'timezone',
-      name: 'Time zone',
+      name: 'Временная зона',
       path: 'timezone',
-      category: ['Axis'],
+      category: ['Оси'],
       editor: TimezonesEditor,
       defaultValue: undefined,
     });
