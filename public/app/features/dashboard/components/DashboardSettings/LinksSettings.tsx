@@ -34,8 +34,8 @@ export function LinksSettings({ dashboard, sectionNav, editIndex, toolbar }: Set
   let pageNav = sectionNav.node.parentItem;
 
   if (isEditing) {
-    const title = isNew ? 'New link' : 'Edit link';
-    const description = isNew ? 'Create a new link on your dashboard' : 'Edit a specific link of your dashboard';
+    const title = isNew ? 'Новая ссылка' : 'Редактировать ссылку';
+    const description = isNew ? 'Создайте новую ссылку на панели управления' : 'Редактировать конкретную ссылку на панели управления';
     pageNav = {
       text: title,
       subTitle: description,

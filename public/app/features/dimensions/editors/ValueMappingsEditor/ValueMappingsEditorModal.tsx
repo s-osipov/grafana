@@ -48,10 +48,10 @@ export function ValueMappingsEditorModal({ value, onChange, onClose, showIconPic
   };
 
   const mappingTypes: Array<SelectableValue<MappingType>> = [
-    { label: 'Value', value: MappingType.ValueToText, description: 'Match a specific text value' },
-    { label: 'Range', value: MappingType.RangeToText, description: 'Match a numerical range of values' },
-    { label: 'Regex', value: MappingType.RegexToText, description: 'Match a regular expression with replacement' },
-    { label: 'Special', value: MappingType.SpecialValue, description: 'Match on null, NaN, boolean and empty values' },
+    { label: 'Значение', value: MappingType.ValueToText, description: 'Соответствие определенному текстовому значению' },
+    { label: 'Диапазон', value: MappingType.RangeToText, description: 'Сопоставить числовой диапазон значений' },
+    { label: 'Regex', value: MappingType.RegexToText, description: 'Сопоставьте регулярное выражение с заменой' },
+    { label: 'Специальное', value: MappingType.SpecialValue, description: 'Сопоставление null, NaN, логических и пустых значений' },
   ];
 
   const onAddValueMapping = (value: SelectableValue<MappingType>) => {

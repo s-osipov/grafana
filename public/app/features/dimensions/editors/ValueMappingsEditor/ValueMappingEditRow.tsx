@@ -144,7 +144,7 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
                 type="text"
                 value={key ?? ''}
                 onChange={onUpdateMatchValue}
-                placeholder="Exact value to match"
+                placeholder="Точное значение для соответствия"
               />
             )}
             {mapping.type === MappingType.RangeToText && (
@@ -152,14 +152,14 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
                 <Input
                   type="number"
                   value={mapping.from ?? ''}
-                  placeholder="Range start"
+                  placeholder="Начало диапазона"
                   onChange={onChangeFrom}
                   prefix="From"
                 />
                 <Input
                   type="number"
                   value={mapping.to ?? ''}
-                  placeholder="Range end"
+                  placeholder="Конец диапазона"
                   onChange={onChangeTo}
                   prefix="To"
                 />
@@ -169,7 +169,7 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
               <Input
                 type="text"
                 value={mapping.pattern ?? ''}
-                placeholder="Regular expression"
+                placeholder="Регулярное выражение"
                 onChange={onChangePattern}
               />
             )}
@@ -182,13 +182,13 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
             )}
           </td>
           <td>
-            <Input type="text" value={result.text ?? ''} onChange={onChangeText} placeholder="Optional display text" />
+            <Input type="text" value={result.text ?? ''} onChange={onChangeText} placeholder="Дополнительный отображаемый текст" />
           </td>
           <td className={styles.textAlignCenter}>
             {result.color && (
               <HorizontalGroup spacing="sm" justify="center">
                 <ColorPicker color={result.color} onChange={onChangeColor} enableNamedColors={true} />
-                <IconButton name="times" onClick={onClearColor} tooltip="Remove color" tooltipPlacement="top" />
+                <IconButton name="times" onClick={onClearColor} tooltip="Удалить цвет" tooltipPlacement="top" />
               </HorizontalGroup>
             )}
             {!result.color && (
@@ -214,7 +214,7 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
                   color={result.color}
                 />
                 {result.icon && (
-                  <IconButton name="times" onClick={onClearIcon} tooltip="Remove icon" tooltipPlacement="top" />
+                  <IconButton name="times" onClick={onClearIcon} tooltip="Удалить иконку" tooltipPlacement="top" />
                 )}
               </HorizontalGroup>
             </td>
@@ -225,15 +225,15 @@ export function ValueMappingEditRow({ mapping, index, onChange, onRemove, onDupl
                 name="copy"
                 onClick={() => onDuplicate(index)}
                 data-testid="duplicate-value-mapping"
-                aria-label="Duplicate value mapping"
-                tooltip="Duplicate"
+                aria-label="Повторить сопоставление значений"
+                tooltip="Повторить"
               />
               <IconButton
                 name="trash-alt"
                 onClick={() => onRemove(index)}
                 data-testid="remove-value-mapping"
-                aria-label="Delete value mapping"
-                tooltip="Delete"
+                aria-label="Удалить сопоставление значений"
+                tooltip="Удалить"
               />
             </HorizontalGroup>
           </td>

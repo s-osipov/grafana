@@ -233,7 +233,7 @@ export const getAllStandardFieldConfigs = () => {
     override: standardEditorsRegistry.get('text').editor,
     process: displayNameOverrideProcessor,
     settings: {
-      placeholder: 'none',
+      placeholder: 'нет',
       expandTemplateVars: true,
     },
     shouldApply: () => true,
@@ -251,7 +251,7 @@ export const getAllStandardFieldConfigs = () => {
     process: stringOverrideProcessor,
 
     settings: {
-      placeholder: 'none',
+      placeholder: 'нет',
     },
 
     shouldApply: () => true,
@@ -286,7 +286,7 @@ export const getAllStandardFieldConfigs = () => {
     process: numberOverrideProcessor,
 
     settings: {
-      placeholder: 'auto',
+      placeholder: 'авто',
     },
     shouldApply: (field) => field.type === FieldType.number,
     category,

@@ -46,19 +46,19 @@ export const DataLinkEditor = memo(({ index, value, onChange, suggestions, isLas
 
   return (
     <div className={styles.listItem}>
-      <Field label="Title">
-        <Input value={value.title} onChange={onTitleChange} placeholder="Show details" />
+      <Field label="Заголовок">
+        <Input value={value.title} onChange={onTitleChange} placeholder="Показать детали" />
       </Field>
 
       <Field
         label="URL"
         invalid={isCompactUrl(value.url)}
-        error="Data link is an Explore URL in a deprecated format. Please visit the URL to be redirected, and edit this data link to use that URL."
+        error="Ссылка на данные — это URL-адрес просмотра в устаревшем формате. Посетите URL-адрес, который необходимо перенаправить, и отредактируйте эту ссылку на данные, чтобы использовать этот URL-адрес."
       >
         <DataLinkInput value={value.url} onChange={onUrlChange} suggestions={suggestions} />
       </Field>
 
-      <Field label="Open in new tab">
+      <Field label="Открыть в новой вкладке">
         <Switch value={value.targetBlank || false} onChange={onOpenInNewTabChanged} />
       </Field>
 

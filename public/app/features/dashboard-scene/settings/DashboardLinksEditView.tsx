@@ -127,7 +127,7 @@ interface EditLinkViewProps {
 
 function EditLinkView({ pageNav, link, navModel, dashboard, onChange, onGoBack }: EditLinkViewProps) {
   const editLinkPageNav = {
-    text: 'Edit link',
+    text: 'Редактировать ссылку',
     parentItem: pageNav,
   };
   const isSingleTopNav = config.featureToggles.singleTopNav;

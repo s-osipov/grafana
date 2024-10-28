@@ -93,7 +93,7 @@ export const ValueMappingsEditor = memo((props: Props) => {
       </Button>
       <Modal
         isOpen={isEditorOpen}
-        title="Value mappings"
+        title="Сопоставления значений"
         onDismiss={onCloseEditor}
         className={styles.modal}
         closeOnBackdropClick={false}

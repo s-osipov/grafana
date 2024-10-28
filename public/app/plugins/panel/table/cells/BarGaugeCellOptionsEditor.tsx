@@ -20,14 +20,14 @@ export function BarGaugeCellOptionsEditor({ cellOptions, onChange }: Props) {
 
   return (
     <Stack direction="column" gap={0}>
-      <Field label="Gauge display mode">
+      <Field label="Тип отображения загрузки">
         <RadioButtonGroup
           value={cellOptions?.mode ?? BarGaugeDisplayMode.Gradient}
           onChange={onCellOptionsChange}
           options={barGaugeOpts}
         />
       </Field>
-      <Field label="Value display">
+      <Field label="Отображение значений">
         <RadioButtonGroup
           value={cellOptions?.valueDisplayMode ?? BarGaugeValueMode.Text}
           onChange={onValueModeChange}
@@ -39,13 +39,13 @@ export function BarGaugeCellOptionsEditor({ cellOptions, onChange }: Props) {
 }
 
 const barGaugeOpts: SelectableValue[] = [
-  { value: BarGaugeDisplayMode.Basic, label: 'Basic' },
-  { value: BarGaugeDisplayMode.Gradient, label: 'Gradient' },
-  { value: BarGaugeDisplayMode.Lcd, label: 'Retro LCD' },
+  { value: BarGaugeDisplayMode.Basic, label: 'Базовый' },
+  { value: BarGaugeDisplayMode.Gradient, label: 'Градиент' },
+  { value: BarGaugeDisplayMode.Lcd, label: 'Ретро LCD' },
 ];
 
 const valueModes: SelectableValue[] = [
-  { value: BarGaugeValueMode.Color, label: 'Value color' },
-  { value: BarGaugeValueMode.Text, label: 'Text color' },
-  { value: BarGaugeValueMode.Hidden, label: 'Hidden' },
+  { value: BarGaugeValueMode.Color, label: 'Цвета значения' },
+  { value: BarGaugeValueMode.Text, label: 'Цвет текста' },
+  { value: BarGaugeValueMode.Hidden, label: 'Скрытое' },
 ];

@@ -140,7 +140,7 @@ export const DataLinksInlineEditor = ({
 
       {isEditing && editIndex !== null && (
         <Modal
-          title="Edit link"
+          title="Редактировать ссылку"
           isOpen={true}
           closeOnBackdropClick={false}
           onDismiss={() => {
