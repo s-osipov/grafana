@@ -32,15 +32,15 @@ export const ColorBackgroundCellOptionsEditor = ({
   };
 
   const label = (
-    <Label description="If selected text will be wrapped to the width of text in the configured column">
-      {'Wrap text '}
+    <Label description="Если выделенный текст будет перенесен по ширине текста в настроенном столбце">
+      {'Перенос текста '}
       <Badge text="Alpha" color="blue" style={{ fontSize: '11px', marginLeft: '5px', lineHeight: '1.2' }} />
     </Label>
   );
 
   return (
     <>
-      <Field label="Background display mode">
+      <Field label="Фоновый режим отображения">
         <RadioButtonGroup
           value={cellOptions?.mode ?? TableCellBackgroundDisplayMode.Gradient}
           onChange={onCellOptionsChange}
@@ -48,8 +48,8 @@ export const ColorBackgroundCellOptionsEditor = ({
         />
       </Field>
       <Field
-        label="Apply to entire row"
-        description="If selected the entire row will be colored as this cell would be."
+        label="Применить ко всей строке"
+        description="Если этот флажок установлен, вся строка будет окрашена так же, как эта ячейка."
       >
         <Switch value={cellOptions.applyToRow} onChange={onColorRowChange} />
       </Field>
