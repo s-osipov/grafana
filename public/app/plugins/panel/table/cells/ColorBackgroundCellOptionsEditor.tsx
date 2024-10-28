@@ -5,8 +5,8 @@ import { Field, RadioButtonGroup, Switch, Label, Badge } from '@grafana/ui';
 import { TableCellEditorProps } from '../TableCellOptionEditor';
 
 const colorBackgroundOpts: Array<SelectableValue<TableCellBackgroundDisplayMode>> = [
-  { value: TableCellBackgroundDisplayMode.Basic, label: 'Basic' },
-  { value: TableCellBackgroundDisplayMode.Gradient, label: 'Gradient' },
+  { value: TableCellBackgroundDisplayMode.Basic, label: 'Базовый' },
+  { value: TableCellBackgroundDisplayMode.Gradient, label: 'Градиент' },
 ];
 
 export const ColorBackgroundCellOptionsEditor = ({

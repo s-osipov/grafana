@@ -15,11 +15,11 @@ import {
 import { Button, ColorPicker, colors, IconButton, Input, Label, RadioButtonGroup, stylesFactory } from '@grafana/ui';
 
 const modes: Array<SelectableValue<ThresholdsMode>> = [
-  { value: ThresholdsMode.Absolute, label: 'Absolute', description: 'Pick thresholds based on the absolute values' },
+  { value: ThresholdsMode.Absolute, label: 'Абсолютный', description: 'Выбирайте пороговые значения на основе абсолютных значений' },
   {
     value: ThresholdsMode.Percentage,
-    label: 'Percentage',
-    description: 'Pick threshold based on the percent between min/max',
+    label: 'Процент',
+    description: 'Выберите порог на основе процента между мин/макс',
   },
 ];
 
@@ -146,12 +146,12 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
   renderInput(threshold: ThresholdWithKey, styles: ThresholdStyles, idx: number) {
     const isPercent = this.props.thresholds.mode === ThresholdsMode.Percentage;
 
-    const ariaLabel = `Threshold ${idx + 1}`;
+    const ariaLabel = `Порог ${idx + 1}`;
     if (!isFinite(threshold.value)) {
       return (
         <Input
           type="text"
-          value={'Base'}
+          value={'Базовый'}
           aria-label={ariaLabel}
           disabled
           prefix={
@@ -194,7 +194,7 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
             className={styles.trashIcon}
             name="trash-alt"
             onClick={() => this.onRemoveThreshold(threshold)}
-            tooltip={`Remove ${ariaLabel}`}
+            tooltip={`Удалить ${ariaLabel}`}
           />
         }
       />
@@ -219,7 +219,7 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
                 className={styles.addButton}
                 fullWidth
               >
-                Add threshold
+                Добавить порог
               </Button>
               <div className={styles.thresholds}>
                 {steps
@@ -233,7 +233,7 @@ export class ThresholdsEditor extends PureComponent<Props, State> {
               </div>
 
               <div>
-                <Label description="Percentage means thresholds relative to min & max">Thresholds mode</Label>
+                <Label description="Процент означает пороговые значения относительно минимума и максимума.">Режим порогов</Label>
                 <RadioButtonGroup options={modes} onChange={this.onModeChanged} value={thresholds.mode} />
               </div>
             </div>
