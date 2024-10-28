@@ -14,7 +14,7 @@ import { OptionPaneRenderProps } from './types';
 export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPaneCategoryDescriptor {
   const { dashboard, panel, onPanelConfigChange } = props;
   const descriptor = new OptionsPaneCategoryDescriptor({
-    title: 'Panel options',
+    title: 'Опции панели',
     id: 'Panel options',
     isOpenDefault: true,
   });
@@ -38,7 +38,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
   return descriptor
     .addItem(
       new OptionsPaneItemDescriptor({
-        title: 'Title',
+        title: 'Заголовок',
         value: panel.title,
         popularRank: 1,
         render: function renderTitle() {
@@ -62,7 +62,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
     )
     .addItem(
       new OptionsPaneItemDescriptor({
-        title: 'Description',
+        title: 'Описание',
         description: panel.description,
         value: panel.description,
         render: function renderDescription() {
@@ -82,7 +82,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
     )
     .addItem(
       new OptionsPaneItemDescriptor({
-        title: 'Transparent background',
+        title: 'Прозрачный фон',
         render: function renderTransparent() {
           return (
             <Switch
@@ -97,13 +97,13 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
     )
     .addCategory(
       new OptionsPaneCategoryDescriptor({
-        title: 'Panel links',
+        title: 'Ссылки на панели',
         id: 'Panel links',
         isOpenDefault: false,
         itemsCount: panel.links?.length,
       }).addItem(
         new OptionsPaneItemDescriptor({
-          title: 'Panel links',
+          title: 'Ссылки на панели',
           render: function renderLinks() {
             return (
               <DataLinksInlineEditor
@@ -119,15 +119,15 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
     )
     .addCategory(
       new OptionsPaneCategoryDescriptor({
-        title: 'Repeat options',
+        title: 'Повторить настройки',
         id: 'Repeat options',
         isOpenDefault: false,
       })
         .addItem(
           new OptionsPaneItemDescriptor({
-            title: 'Repeat by variable',
+            title: 'Повторить по переменной',
             description:
-              'Repeat this panel for each value in the selected variable. This is not visible while in edit mode. You need to go back to dashboard and then update the variable or reload the dashboard.',
+              'Повторите эту панель для каждого значения выбранной переменной. Это не видно в режиме редактирования. Вам нужно вернуться на панель мониторинга, а затем обновить переменную или перезагрузить панель мониторинга.',
             render: function renderRepeatOptions() {
               return (
                 <RepeatRowSelect
@@ -143,12 +143,12 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
         )
         .addItem(
           new OptionsPaneItemDescriptor({
-            title: 'Repeat direction',
+            title: 'Повторить направление',
             showIf: () => !!panel.repeat,
             render: function renderRepeatOptions() {
               const directionOptions = [
-                { label: 'Horizontal', value: 'h' },
-                { label: 'Vertical', value: 'v' },
+                { label: 'По горизонтали', value: 'h' },
+                { label: 'По вертикали', value: 'v' },
               ];
 
               return (
@@ -163,7 +163,7 @@ export function getPanelFrameCategory(props: OptionPaneRenderProps): OptionsPane
         )
         .addItem(
           new OptionsPaneItemDescriptor({
-            title: 'Max per row',
+            title: 'Макс. в строке',
             showIf: () => Boolean(panel.repeat && panel.repeatDirection === 'h'),
             render: function renderOption() {
               const maxPerRowOptions = [2, 3, 4, 6, 8, 12].map((value) => ({ label: value.toString(), value }));
