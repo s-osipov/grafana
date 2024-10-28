@@ -32,10 +32,10 @@ export const DataLinks = (props: Props) => {
 
   return (
     <ConfigSubSection
-      title="Data links"
+      title="Ссылки на данные"
       description={
         <ConfigDescriptionLink
-          description="Add links to existing fields. Links will be shown in log row details next to the field value."
+          description="Добавьте ссылки на существующие поля. Ссылки будут отображаться в сведениях о строках журнала рядом со значением поля."
           suffix="elasticsearch/#data-links"
           feature="Elasticsearch data links"
         />
@@ -63,8 +63,8 @@ export const DataLinks = (props: Props) => {
                   suggestions={[
                     {
                       value: DataLinkBuiltInVars.valueRaw,
-                      label: 'Raw value',
-                      documentation: 'Raw value of the field',
+                      label: 'Исходное значение',
+                      documentation: 'Исходное значение поля',
                       origin: VariableOrigin.Value,
                     },
                   ]}
@@ -85,7 +85,7 @@ export const DataLinks = (props: Props) => {
             onChange(newDataLinks);
           }}
         >
-          Add
+          Добавить
         </Button>
       </div>
     </ConfigSubSection>

@@ -112,22 +112,22 @@ export enum FieldConfigHandlerKey {
 export const configMapHandlers: FieldToConfigMapHandler[] = [
   {
     key: FieldConfigHandlerKey.Name,
-    name: 'Field name',
+    name: 'Имя поля',
     processor: () => {},
   },
   {
     key: FieldConfigHandlerKey.Value,
-    name: 'Field value',
+    name: 'Значение поля',
     processor: () => {},
   },
   {
     key: FieldConfigHandlerKey.Label,
-    name: 'Field label',
+    name: 'Метка поля',
     processor: () => {},
   },
   {
     key: FieldConfigHandlerKey.Ignore,
-    name: 'Ignore',
+    name: 'Игнорировать',
     processor: () => {},
   },
   {
@@ -148,7 +148,7 @@ export const configMapHandlers: FieldToConfigMapHandler[] = [
   },
   {
     key: 'displayName',
-    name: 'Display name',
+    name: 'Отображаемое имя',
     processor: (value) => value.toString(),
   },
   {
@@ -157,7 +157,7 @@ export const configMapHandlers: FieldToConfigMapHandler[] = [
   },
   {
     key: 'threshold1',
-    name: 'Threshold',
+    name: 'Порог',
     targetProperty: 'thresholds',
     processor: (value, config, _, handlerArguments) => {
       const numeric = anyToNumber(value);
@@ -183,7 +183,7 @@ export const configMapHandlers: FieldToConfigMapHandler[] = [
   },
   {
     key: 'mappings.value',
-    name: 'Value mappings / Value',
+    name: 'Сопоставления значений / Значение',
     targetProperty: 'mappings',
     defaultReducer: ReducerID.allValues,
     processor: (value, config, context) => {
@@ -197,7 +197,7 @@ export const configMapHandlers: FieldToConfigMapHandler[] = [
   },
   {
     key: 'mappings.color',
-    name: 'Value mappings / Color',
+    name: 'Сопоставления значений / Цвет',
     targetProperty: 'mappings',
     defaultReducer: ReducerID.allValues,
     processor: (value, config, context) => {
@@ -211,7 +211,7 @@ export const configMapHandlers: FieldToConfigMapHandler[] = [
   },
   {
     key: 'mappings.text',
-    name: 'Value mappings / Display text',
+    name: 'Сопоставления значений / Отображаемый текст',
     targetProperty: 'mappings',
     defaultReducer: ReducerID.allValues,
     processor: (value, config, context) => {

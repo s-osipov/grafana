@@ -91,11 +91,11 @@ export function ValueMappingsEditorModal({ value, onChange, onClose, showIconPic
             <tr>
               <th style={{ width: '1%' }}></th>
               <th style={{ width: '40%', textAlign: 'left' }} colSpan={2}>
-                Condition
+              Состояние
               </th>
-              <th style={{ textAlign: 'left' }}>Display text</th>
-              <th style={{ width: '10%' }}>Color</th>
-              {showIconPicker && <th style={{ width: '10%' }}>Icon</th>}
+              <th style={{ textAlign: 'left' }}>Отображаемый текст</th>
+              <th style={{ width: '10%' }}>Цвет</th>
+              {showIconPicker && <th style={{ width: '10%' }}>Иконка</th>}
               <th style={{ width: '1%' }}></th>
             </tr>
           </thead>
@@ -125,7 +125,7 @@ export function ValueMappingsEditorModal({ value, onChange, onClose, showIconPic
       <Modal.ButtonRow
         leftItems={
           <ValuePicker
-            label="Add a new mapping"
+            label="Добавить новое сопоставление"
             variant="secondary"
             size="md"
             icon="plus"
@@ -137,10 +137,10 @@ export function ValueMappingsEditorModal({ value, onChange, onClose, showIconPic
         }
       >
         <Button variant="secondary" fill="outline" onClick={onClose}>
-          Cancel
+          Закрыть
         </Button>
         <Button variant="primary" onClick={onUpdate}>
-          Update
+          Обновить
         </Button>
       </Modal.ButtonRow>
     </>

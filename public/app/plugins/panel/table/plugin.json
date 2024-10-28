@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Table",
+  "name": "Таблица",
   "id": "table",
 
   "info": {
-    "description": "Supports many column styles",
+    "description": "Поддерживает множество стилей столбцов",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

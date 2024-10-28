@@ -213,7 +213,7 @@ export function getFieldOverrideCategories(
             return (
               <ValuePicker
                 key="Add override property"
-                label="Add override property"
+                label="Добавить переопределенное свойство"
                 variant="secondary"
                 isFullWidth={true}
                 icon="plus"
@@ -239,7 +239,7 @@ export function getFieldOverrideCategories(
           <AddOverrideButtonContainer key="Add override">
             <ValuePicker
               icon="plus"
-              label="Add field override"
+              label="Добавить переопределение поля"
               variant="secondary"
               menuPlacement="auto"
               isFullWidth={true}

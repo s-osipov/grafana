@@ -28,7 +28,7 @@ const TextDisplay = (props: CanvasElementProps<TextConfig, TextData>) => {
   }
   return (
     <div className={styles.container}>
-      <span className={styles.span}>{data?.text ? data.text : 'Double click to set text'}</span>
+      <span className={styles.span}>{data?.text ? data.text : 'Двойной клик для установки текста'}</span>
     </div>
   );
 };
@@ -120,7 +120,7 @@ const getStyles = (data: TextData | undefined) => (theme: GrafanaTheme2) => ({
 export const textItem: CanvasElementItem<TextConfig, TextData> = {
   id: 'text',
   name: 'Text',
-  description: 'Display text',
+  description: 'Отображаемый текст',
 
   display: TextDisplay,
 
@@ -171,20 +171,20 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
   },
 
   registerOptionsUI: (builder) => {
-    const category = ['Text'];
+    const category = ['Текст'];
     builder
       .addCustomEditor({
         category,
         id: 'textSelector',
         path: 'config.text',
-        name: 'Text',
+        name: 'Текст',
         editor: TextDimensionEditor,
       })
       .addCustomEditor({
         category,
         id: 'config.color',
         path: 'config.color',
-        name: 'Text color',
+        name: 'Цвет текста',
         editor: ColorDimensionEditor,
         settings: {},
         defaultValue: {},
@@ -192,12 +192,12 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
       .addRadio({
         category,
         path: 'config.align',
-        name: 'Align text',
+        name: 'Выравнивание текста',
         settings: {
           options: [
-            { value: Align.Left, label: 'Left' },
-            { value: Align.Center, label: 'Center' },
-            { value: Align.Right, label: 'Right' },
+            { value: Align.Left, label: 'Слева' },
+            { value: Align.Center, label: 'По центру' },
+            { value: Align.Right, label: 'Справа' },
           ],
         },
         defaultValue: Align.Left,
@@ -205,12 +205,12 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
       .addRadio({
         category,
         path: 'config.valign',
-        name: 'Vertical align',
+        name: 'Вертикальное выравнивание',
         settings: {
           options: [
-            { value: VAlign.Top, label: 'Top' },
-            { value: VAlign.Middle, label: 'Middle' },
-            { value: VAlign.Bottom, label: 'Bottom' },
+            { value: VAlign.Top, label: 'Сверху' },
+            { value: VAlign.Middle, label: 'По центру' },
+            { value: VAlign.Bottom, label: 'Снизу' },
           ],
         },
         defaultValue: VAlign.Middle,
@@ -218,9 +218,9 @@ export const textItem: CanvasElementItem<TextConfig, TextData> = {
       .addNumberInput({
         category,
         path: 'config.size',
-        name: 'Text size',
+        name: 'Разсер текста',
         settings: {
-          placeholder: 'Auto',
+          placeholder: 'Авто',
         },
       });
   },

@@ -121,7 +121,7 @@ export const OptionsPaneOptions = (props: OptionPaneRenderProps) => {
           />
         )}
         <div className={styles.formRow}>
-          <FilterInput width={0} value={searchQuery} onChange={setSearchQuery} placeholder={'Search options'} />
+          <FilterInput width={0} value={searchQuery} onChange={setSearchQuery} placeholder={'Поиск настроек'} />
         </div>
         {showSearchRadioButtons && (
           <div className={styles.formRow}>
@@ -146,9 +146,9 @@ function getOptionRadioFilters(): Array<SelectableValue<OptionFilter>> {
 }
 
 export enum OptionFilter {
-  All = 'All',
-  Overrides = 'Overrides',
-  Recent = 'Recent',
+  All = 'Все',
+  Overrides = 'Переопределения',
+  Recent = 'Недавние',
 }
 
 export function renderSearchHits(
@@ -163,7 +163,7 @@ export function renderSearchHits(
     <div key="search results">
       <OptionsPaneCategory
         id="Found options"
-        title={`Matched ${optionHits.length}/${totalCount} options`}
+        title={`Соотвествует ${optionHits.length}/${totalCount} настроек`}
         key="Normal options"
         forceOpen={1}
       >
