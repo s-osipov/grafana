@@ -28,17 +28,17 @@ export enum PanelEditTableToggle {
 }
 
 export const displayModes = [
-  { value: DisplayMode.Fill, label: 'Fill', description: 'Use all available space' },
-  { value: DisplayMode.Exact, label: 'Actual', description: 'Make same size as on the dashboard' },
+  { value: DisplayMode.Fill, label: 'Наполнение', description: 'Используйте все доступное пространство' },
+  { value: DisplayMode.Exact, label: 'Действительный', description: 'Сделайте такого же размера, как на дашборде' },
 ];
 
 export const panelEditTableModes = [
   {
     value: PanelEditTableToggle.Off,
-    label: 'Visualization',
-    description: 'Show using selected visualization',
+    label: 'Визуализация',
+    description: 'Показать с использованием выбранной визуализации',
   },
-  { value: PanelEditTableToggle.Table, label: 'Table', description: 'Show raw data in table form' },
+  { value: PanelEditTableToggle.Table, label: 'Таблица', description: 'Показать необработанные данные в виде таблицы' },
 ];
 
 /** @internal */

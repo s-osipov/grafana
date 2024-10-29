@@ -155,7 +155,7 @@ function getViewModelRows(
     rows.push({
       fieldName,
       configOption: mapping.automatic ? null : option,
-      placeholder: mapping.automatic ? option?.label : 'Choose',
+      placeholder: mapping.automatic ? option?.label : 'Выбрать',
       handlerKey: mapping.handler?.key ?? null,
       reducerId: mapping.reducerId,
       handlerArguments: mapping.handlerArguments,

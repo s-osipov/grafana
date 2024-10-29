@@ -44,8 +44,8 @@ export const PanelTypeFilter = ({ onChange: propsOnChange, maxMenuHeight, isWidg
     defaultOptions: true,
     getOptionLabel: (i: SelectableValue<PanelPluginMeta>) => i.label,
     getOptionValue: (i: SelectableValue<PanelPluginMeta>) => i.value,
-    noOptionsMessage: 'No Panel types found',
-    placeholder: 'Filter by type',
+    noOptionsMessage: 'Типы панелей не найдены',
+    placeholder: 'Фильтровать по типу',
     maxMenuHeight,
     options,
     value,
@@ -61,12 +61,12 @@ export const PanelTypeFilter = ({ onChange: propsOnChange, maxMenuHeight, isWidg
           fill="text"
           className={styles.clear}
           onClick={() => onChange([])}
-          aria-label="Clear types"
+          aria-label="Очистить типы"
         >
           Clear types
         </Button>
       )}
-      <MultiSelect<PanelPluginMeta> {...selectOptions} prefix={<Icon name="filter" />} aria-label="Panel Type filter" />
+      <MultiSelect<PanelPluginMeta> {...selectOptions} prefix={<Icon name="filter" />} aria-label="Фильтр типа панели" />
     </div>
   );
 };

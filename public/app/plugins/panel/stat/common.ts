@@ -14,16 +14,16 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   builder: PanelOptionsEditorBuilder<T>,
   includeFieldMatcher = true
 ) {
-  const valueOptionsCategory = ['Value options'];
+  const valueOptionsCategory = ['Настройки значений'];
 
   builder.addRadio({
     path: 'reduceOptions.values',
-    name: 'Show',
-    description: 'Calculate a single value per column or series or show each row',
+    name: 'Показать',
+    description: 'Вычислите одно значение для каждого столбца или серии или отобразите каждую строку',
     settings: {
       options: [
-        { value: false, label: 'Calculate' },
-        { value: true, label: 'All values' },
+        { value: false, label: 'Вычислить' },
+        { value: true, label: 'Все значения' },
       ],
     },
     category: valueOptionsCategory,
@@ -32,8 +32,8 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
 
   builder.addNumberInput({
     path: 'reduceOptions.limit',
-    name: 'Limit',
-    description: 'Max number of rows to display',
+    name: 'Лимит',
+    description: 'Максимальное количество строк для отображения',
     category: valueOptionsCategory,
     settings: {
       placeholder: '25',
@@ -47,8 +47,8 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   builder.addCustomEditor({
     id: 'reduceOptions.calcs',
     path: 'reduceOptions.calcs',
-    name: 'Calculation',
-    description: 'Choose a reducer function / calculation',
+    name: 'Вычмсление',
+    description: 'Выберите функцию редуктора/расчет',
     category: valueOptionsCategory,
     editor: standardEditorsRegistry.get('stats-picker').editor,
     // TODO: Get ReducerID from generated schema one day?
@@ -60,16 +60,16 @@ export function addStandardDataReduceOptions<T extends SingleStatBaseOptions>(
   if (includeFieldMatcher) {
     builder.addSelect({
       path: 'reduceOptions.fields',
-      name: 'Fields',
-      description: 'Select the fields that should be included in the panel',
+      name: 'Поля',
+      description: 'Выберите поля, которые должны быть включены в панель',
       category: valueOptionsCategory,
       settings: {
         allowCustomValue: true,
         options: [],
         getOptions: async (context: FieldOverrideContext) => {
           const options = [
-            { value: '', label: 'Numeric Fields' },
-            { value: '/.*/', label: 'All Fields' },
+            { value: '', label: 'Числовые поля' },
+            { value: '/.*/', label: 'Все поля' },
           ];
           if (context && context.data) {
             for (const frame of context.data) {
@@ -94,14 +94,14 @@ export function addOrientationOption<T extends SingleStatBaseOptions>(
 ) {
   builder.addRadio({
     path: 'orientation',
-    name: 'Orientation',
-    description: 'Layout orientation',
+    name: 'Ориентация',
+    description: 'Ориентация макета',
     category,
     settings: {
       options: [
-        { value: VizOrientation.Auto, label: 'Auto' },
-        { value: VizOrientation.Horizontal, label: 'Horizontal' },
-        { value: VizOrientation.Vertical, label: 'Vertical' },
+        { value: VizOrientation.Auto, label: 'Авто' },
+        { value: VizOrientation.Horizontal, label: 'По горизонтали' },
+        { value: VizOrientation.Vertical, label: 'По вертикали' },
       ],
     },
     defaultValue: VizOrientation.Auto,

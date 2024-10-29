@@ -34,8 +34,8 @@ function isPanelInEdit(panelId: number, panelInEditId?: number) {
 interface Props extends QueryEditorProps<DashboardDatasource, DashboardQuery> {}
 
 const topics = [
-  { label: 'All data', value: false },
-  { label: 'Annotations', value: true, description: 'Include annotations as regular data' },
+  { label: 'Все данные', value: false },
+  { label: 'Аннотации', value: true, description: 'Включить аннотации как обычные данные' },
 ];
 
 export function DashboardQueryEditor({ data, query, onChange, onRunQuery }: Props) {
@@ -127,7 +127,7 @@ export function DashboardQueryEditor({ data, query, onChange, onRunQuery }: Prop
         )
         .map((panel) => ({
           value: panel.id,
-          label: panel.title ?? 'Panel ' + panel.id,
+          label: panel.title ?? 'Панель ' + panel.id,
           description: getPanelDescription(panel),
           imgUrl: config.panels[panel.type].info.logos.small,
         })) ?? [],
@@ -144,7 +144,7 @@ export function DashboardQueryEditor({ data, query, onChange, onRunQuery }: Prop
   if (panels.length < 1) {
     return (
       <p className={styles.noQueriesText}>
-        This dashboard does not have any other panels. Add queries to other panels and try again.
+        На этой информационной панели нет других панелей. Добавьте запросы на другие панели и повторите попытку.
       </p>
     );
   }
@@ -155,10 +155,10 @@ export function DashboardQueryEditor({ data, query, onChange, onRunQuery }: Prop
     <OperationsEditorRow>
       <Stack direction="column">
         <Stack gap={3}>
-          <Field label="Source panel" description="Use query results from another panel">
+          <Field label="Исходная панель" description="Использовать результаты запроса из другой панели">
             <Select
               inputId={selectId}
-              placeholder="Choose panel"
+              placeholder="Выбрать панель"
               isSearchable={true}
               options={panels}
               value={selected}
@@ -166,7 +166,7 @@ export function DashboardQueryEditor({ data, query, onChange, onRunQuery }: Prop
             />
           </Field>
 
-          <Field label="Data" description="Use data or annotations from the panel">
+          <Field label="Данные" description="Используйте данные или аннотации с панели">
             <RadioButtonGroup
               options={topics}
               value={query.topic === DataTopic.Annotations}
@@ -175,7 +175,7 @@ export function DashboardQueryEditor({ data, query, onChange, onRunQuery }: Prop
           </Field>
 
           {showTransforms && (
-            <Field label="Transform" description="Apply transformations from the source panel">
+            <Field label="Трансформация" description="Примените преобразования из исходной панели">
               <InlineSwitch value={Boolean(query.withTransforms)} onChange={onTransformToggle} />
             </Field>
           )}
@@ -186,7 +186,7 @@ export function DashboardQueryEditor({ data, query, onChange, onRunQuery }: Prop
         ) : (
           <>
             {results && Boolean(results.length) && (
-              <Field label="Queries from panel">
+              <Field label="Запросы из панели">
                 <Stack direction="column">
                   {results.map((target, i) => (
                     <Stack key={i} alignItems="center" gap={1}>

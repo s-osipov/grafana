@@ -59,7 +59,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
     const isEditingPanel = Boolean(dashboard.state.editPanel);
     if (!isEditingPanel) {
       items.push({
-        text: t('panel.header-menu.view', `View`),
+        text: t('panel.header-menu.view', `Просмотр`),
         iconClassName: 'eye',
         shortcut: 'v',
         href: getViewPanelUrl(panel),
@@ -70,7 +70,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
       // We could check isEditing here but I kind of think this should always be in the menu,
       // and going into panel edit should make the dashboard go into edit mode is it's not already
       items.push({
-        text: t('panel.header-menu.edit', `Edit`),
+        text: t('panel.header-menu.edit', `Редактировать`),
         iconClassName: 'edit',
         shortcut: 'e',
         href: getEditPanelUrl(getPanelIdForVizPanel(panel)),
@@ -80,7 +80,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
     if (config.featureToggles.newDashboardSharingComponent) {
       const subMenu: PanelMenuItem[] = [];
       subMenu.push({
-        text: t('share-panel.menu.share-link-title', 'Share link'),
+        text: t('share-panel.menu.share-link-title', 'Поделиться ссылкой'),
         iconClassName: 'link',
         shortcut: 'p u',
         onClick: () => {
@@ -93,7 +93,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
         },
       });
       subMenu.push({
-        text: t('share-panel.menu.share-embed-title', 'Share embed'),
+        text: t('share-panel.menu.share-embed-title', 'Поделитсья вставкой'),
         iconClassName: 'arrow',
         shortcut: 'p e',
         onClick: () => {
@@ -108,7 +108,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
 
       if (contextSrv.isSignedIn && config.snapshotEnabled && dashboard.canEditDashboard()) {
         subMenu.push({
-          text: t('share-panel.menu.share-snapshot-title', 'Share snapshot'),
+          text: t('share-panel.menu.share-snapshot-title', 'Поделиться снимком'),
           iconClassName: 'camera',
           shortcut: 'p s',
           onClick: () => {
@@ -124,7 +124,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
 
       items.push({
         type: 'submenu',
-        text: t('panel.header-menu.share', 'Share'),
+        text: t('panel.header-menu.share', 'Поделиться'),
         iconClassName: 'share-alt',
         subMenu,
         onClick: (e) => {
@@ -133,7 +133,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
       });
     } else {
       items.push({
-        text: t('panel.header-menu.share', 'Share'),
+        text: t('panel.header-menu.share', 'Поделиться'),
         iconClassName: 'share-alt',
         onClick: () => {
           dashboard.showModal(new ShareModal({ panelRef: panel.getRef() }));
@@ -144,7 +144,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
 
     if (dashboard.state.isEditing && !isRepeat && !isEditingPanel) {
       moreSubMenu.push({
-        text: t('panel.header-menu.duplicate', `Duplicate`),
+        text: t('panel.header-menu.duplicate', `Дублировать`),
         iconClassName: 'file-copy-alt',
         onClick: () => {
           dashboard.duplicatePanel(panel);
@@ -155,7 +155,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
 
     if (!isEditingPanel) {
       moreSubMenu.push({
-        text: t('panel.header-menu.copy', `Copy`),
+        text: t('panel.header-menu.copy', `Копировать`),
         iconClassName: 'copy',
         onClick: () => {
           dashboard.copyPanel(panel);
@@ -166,7 +166,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
     if (dashboard.state.isEditing && !isRepeat && !isEditingPanel) {
       if (isLibraryPanel(panel)) {
         moreSubMenu.push({
-          text: t('panel.header-menu.unlink-library-panel', `Unlink library panel`),
+          text: t('panel.header-menu.unlink-library-panel', `Отсоединить панель библиотеки`),
           iconClassName: 'link-broken',
           onClick: () => {
             dashboard.showModal(
@@ -178,7 +178,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
         });
 
         moreSubMenu.push({
-          text: t('panel.header-menu.replace-library-panel', `Replace library panel`),
+          text: t('panel.header-menu.replace-library-panel', `Переместить библиотечную панель`),
           iconClassName: 'library-panel',
           onClick: () => {
             dashboard.onShowAddLibraryPanelDrawer(panel.getRef());
@@ -187,7 +187,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
       } else {
         if (config.featureToggles.newDashboardSharingComponent) {
           moreSubMenu.push({
-            text: t('share-panel.menu.new-library-panel-title', 'New library panel'),
+            text: t('share-panel.menu.new-library-panel-title', 'Новая библиотечная модель'),
             iconClassName: 'plus-square',
             onClick: () => {
               const drawer = new ShareDrawer({
@@ -200,7 +200,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
           });
         } else {
           moreSubMenu.push({
-            text: t('panel.header-menu.create-library-panel', `Create library panel`),
+            text: t('panel.header-menu.create-library-panel', `Создать библиотечную панель`),
             onClick: () => {
               dashboard.showModal(
                 new ShareModal({
@@ -215,7 +215,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
     }
 
     moreSubMenu.push({
-      text: t('panel.header-menu.new-alert-rule', `New alert rule`),
+      text: t('panel.header-menu.new-alert-rule', `Новое правило оповещения`),
       iconClassName: 'bell',
       onClick: (e) => onCreateAlert(panel),
     });
@@ -223,8 +223,8 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
     if (hasLegendOptions(panel.state.options) && !isEditingPanel) {
       moreSubMenu.push({
         text: panel.state.options.legend.showLegend
-          ? t('panel.header-menu.hide-legend', 'Hide legend')
-          : t('panel.header-menu.show-legend', 'Show legend'),
+          ? t('panel.header-menu.hide-legend', 'Скрыть легенду')
+          : t('panel.header-menu.show-legend', 'Показать легенду'),
         iconClassName: panel.state.options.legend.showLegend ? 'legend-hide' : 'legend-show',
         onClick: (e) => {
           e.preventDefault();
@@ -236,7 +236,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
 
     if (dashboard.canEditDashboard() && plugin && !plugin.meta.skipDataQuery && !isRepeat) {
       moreSubMenu.push({
-        text: t('panel.header-menu.get-help', 'Get help'),
+        text: t('panel.header-menu.get-help', 'Помощь'),
         iconClassName: 'question-circle',
         onClick: (e: React.MouseEvent) => {
           e.preventDefault();
@@ -265,7 +265,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
 
     if (extensions.length > 0 && !dashboard.state.isEditing) {
       items.push({
-        text: 'Extensions',
+        text: 'Расширения',
         iconClassName: 'plug',
         type: 'submenu',
         subMenu: createExtensionSubMenu(extensions),
@@ -275,7 +275,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
     if (moreSubMenu.length) {
       items.push({
         type: 'submenu',
-        text: t('panel.header-menu.more', `More...`),
+        text: t('panel.header-menu.more', `Еще...`),
         iconClassName: 'cube',
         subMenu: moreSubMenu,
         onClick: (e) => {
@@ -291,7 +291,7 @@ export function panelMenuBehavior(menu: VizPanelMenu, isRepeat = false) {
       });
 
       items.push({
-        text: t('panel.header-menu.remove', `Remove`),
+        text: t('panel.header-menu.remove', `Удалить`),
         iconClassName: 'trash-alt',
         onClick: () => {
           onRemovePanel(dashboard, panel);
@@ -315,7 +315,7 @@ async function getExploreMenuItem(panel: VizPanel): Promise<PanelMenuItem | unde
   }
 
   return {
-    text: t('panel.header-menu.explore', `Explore`),
+    text: t('panel.header-menu.explore', `Исследовать`),
     iconClassName: 'compass',
     shortcut: 'p x',
     href: exploreUrl,
@@ -331,7 +331,7 @@ function getInspectMenuItem(
 
   if (plugin && !plugin.meta.skipDataQuery) {
     inspectSubMenu.push({
-      text: t('panel.header-menu.inspect-data', `Data`),
+      text: t('panel.header-menu.inspect-data', `Данные`),
       href: getInspectUrl(panel, InspectTab.Data),
       onClick: (e) => {
         e.preventDefault();
@@ -341,7 +341,7 @@ function getInspectMenuItem(
 
     if (dashboard instanceof DashboardScene && dashboard.state.meta.canEdit) {
       inspectSubMenu.push({
-        text: t('panel.header-menu.query', `Query`),
+        text: t('panel.header-menu.query', `Запрос`),
         href: getInspectUrl(panel, InspectTab.Query),
         onClick: (e) => {
           e.preventDefault();
@@ -352,7 +352,7 @@ function getInspectMenuItem(
   }
 
   inspectSubMenu.push({
-    text: t('panel.header-menu.inspect-json', `Panel JSON`),
+    text: t('panel.header-menu.inspect-json', `Панель JSON`),
     href: getInspectUrl(panel, InspectTab.JSON),
     onClick: (e) => {
       e.preventDefault();
@@ -361,7 +361,7 @@ function getInspectMenuItem(
   });
 
   return {
-    text: t('panel.header-menu.inspect', `Inspect`),
+    text: t('panel.header-menu.inspect', `Инспектировать`),
     iconClassName: 'info-circle',
     shortcut: 'i',
     href: getInspectUrl(panel),
@@ -472,10 +472,10 @@ function createExtensionContext(panel: VizPanel, dashboard: DashboardScene): Plu
 export function onRemovePanel(dashboard: DashboardScene, panel: VizPanel) {
   appEvents.publish(
     new ShowConfirmModalEvent({
-      title: 'Remove panel',
-      text: 'Are you sure you want to remove this panel?',
+      title: 'Удалить панель',
+      text: 'Вы уверены, что хотите удалить эту панель?',
       icon: 'trash-alt',
-      yesText: 'Remove',
+      yesText: 'Удалить',
       onConfirm: () => dashboard.removePanel(panel),
     })
   );

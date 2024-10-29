@@ -64,21 +64,21 @@ export const VisualizationSelectPane = ({ panel, data }: Props) => {
   }
 
   const radioOptions: Array<SelectableValue<VisualizationSelectPaneTab>> = [
-    { label: 'Visualizations', value: VisualizationSelectPaneTab.Visualizations },
-    { label: 'Suggestions', value: VisualizationSelectPaneTab.Suggestions },
+    { label: 'Визуализации', value: VisualizationSelectPaneTab.Visualizations },
+    { label: 'Предложения', value: VisualizationSelectPaneTab.Suggestions },
     {
-      label: 'Library panels',
+      label: 'Библиотечные панели',
       value: VisualizationSelectPaneTab.LibraryPanels,
-      description: 'Reusable panels you can share between multiple dashboards.',
+      description: 'Панели многократного использования, которые можно использовать на нескольких дашбордах.',
     },
   ];
 
   const radioOptionsWidgetFlow: Array<SelectableValue<VisualizationSelectPaneTab>> = [
-    { label: 'Widgets', value: VisualizationSelectPaneTab.Widgets },
+    { label: 'Виджет', value: VisualizationSelectPaneTab.Widgets },
     {
-      label: 'Library panels',
+      label: 'Библиотечные панели',
       value: VisualizationSelectPaneTab.LibraryPanels,
-      description: 'Reusable panels you can share between multiple dashboards.',
+      description: 'Панели многократного использования, которые можно использовать на нескольких дашбордах.',
     },
   ];
 
@@ -91,10 +91,10 @@ export const VisualizationSelectPane = ({ panel, data }: Props) => {
             onChange={setSearchQuery}
             ref={searchRef}
             autoFocus={true}
-            placeholder="Search for..."
+            placeholder="Искать..."
           />
           <Button
-            title="Close"
+            title="Закрыть"
             variant="secondary"
             icon="angle-up"
             className={styles.closeButton}

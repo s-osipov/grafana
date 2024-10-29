@@ -120,7 +120,7 @@ interface Props extends AddLibraryPanelContentsProps {
 
 export const AddLibraryPanelModal = ({ isOpen = false, panel, initialFolderUid, ...props }: Props) => {
   return (
-    <Modal title="Create library panel" isOpen={isOpen} onDismiss={props.onDismiss}>
+    <Modal title="Создать библиотечную панель" isOpen={isOpen} onDismiss={props.onDismiss}>
       <AddLibraryPanelContents panel={panel} initialFolderUid={initialFolderUid} onDismiss={props.onDismiss} />
     </Modal>
   );

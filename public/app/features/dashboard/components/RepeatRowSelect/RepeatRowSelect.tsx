@@ -25,13 +25,13 @@ export const RepeatRowSelect = ({ repeat, onChange, id }: Props) => {
 
     if (options.length === 0) {
       options.unshift({
-        label: 'No template variables found',
+        label: 'Переменные шаблона не найдены',
         value: null,
       });
     }
 
     options.unshift({
-      label: 'Disable repeating',
+      label: 'Отключить повторение',
       value: null,
     });
 
@@ -62,13 +62,13 @@ export const RepeatRowSelect2 = ({ sceneContext, repeat, id, onChange }: Props2)
 
     if (options.length === 0) {
       options.unshift({
-        label: 'No template variables found',
+        label: 'Переменные шаблона не найдены',
         value: null,
       });
     }
 
     options.unshift({
-      label: 'Disable repeating',
+      label: 'Отключить повторение',
       value: null,
     });
 
