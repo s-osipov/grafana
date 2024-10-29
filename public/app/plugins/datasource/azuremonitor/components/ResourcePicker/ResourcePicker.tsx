@@ -181,9 +181,9 @@ const ResourcePicker = ({
       <table className={styles.table}>
         <thead>
           <tr className={cx(styles.row, styles.header)}>
-            <td className={styles.cell}>Scope</td>
-            <td className={styles.cell}>Type</td>
-            <td className={styles.cell}>Location</td>
+            <td className={styles.cell}>Объем</td>
+            <td className={styles.cell}>Тип</td>
+            <td className={styles.cell}>Позиция</td>
           </tr>
         </thead>
       </table>
@@ -194,14 +194,14 @@ const ResourcePicker = ({
             {isLoading && (
               <tr className={cx(styles.row)}>
                 <td className={styles.cell}>
-                  <LoadingPlaceholder text={'Loading...'} />
+                  <LoadingPlaceholder text={'Загрузка...'} />
                 </td>
               </tr>
             )}
             {!isLoading && rows.length === 0 && (
               <tr className={cx(styles.row)}>
                 <td className={styles.cell} aria-live="polite">
-                  No resources found
+                  Ресурсы не найдены
                 </td>
               </tr>
             )}
@@ -226,7 +226,7 @@ const ResourcePicker = ({
       <footer className={styles.selectionFooter}>
         {selectedRows.length > 0 && (
           <>
-            <h5>Selection</h5>
+            <h5>Выбор</h5>
 
             <div className={cx(styles.scrollableTable, styles.selectedTableScroller)}>
               <table className={styles.table}>
@@ -272,14 +272,13 @@ const ResourcePicker = ({
 
         <Modal.ButtonRow>
           <Button onClick={onCancel} variant="secondary" fill="outline">
-            Cancel
+            Закрыть
           </Button>
           <Button
             disabled={!!errorMessage || !internalSelected.every(isValid)}
             onClick={handleApply}
-            data-testid={selectors.components.queryEditor.resourcePicker.apply.button}
-          >
-            Apply
+            data-testid={selectors.components.queryEditor.resourcePicker.apply.button}>
+            Применить
           </Button>
         </Modal.ButtonRow>
       </footer>

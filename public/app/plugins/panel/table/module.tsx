@@ -41,7 +41,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
           path: 'width',
           name: 'Ширина столбца',
           settings: {
-            placeholder: 'auto',
+            placeholder: 'авто',
             min: 20,
             max: 300,
           },

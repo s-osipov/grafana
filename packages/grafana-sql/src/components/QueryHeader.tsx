@@ -126,9 +126,9 @@ export function QueryHeader({
     <>
       <EditorHeader>
         <InlineSelect
-          label="Format"
+          label="Формат"
           value={query.format}
-          placeholder="Select format"
+          placeholder="Выбор формата"
           menuShouldPortal
           onChange={onFormatChange}
           options={QUERY_FORMAT_OPTIONS}
@@ -138,7 +138,7 @@ export function QueryHeader({
           <>
             <InlineSwitch
               id={`sql-filter-${htmlId}`}
-              label="Filter"
+              label="Фильтр"
               data-testid={selectors.components.SQLQueryEditor.headerFilterSwitch}
               transparent={true}
               showLabel={true}
@@ -159,7 +159,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id={`sql-group-${htmlId}`}
-              label="Group"
+              label="Группировка"
               data-testid={selectors.components.SQLQueryEditor.headerGroupSwitch}
               transparent={true}
               showLabel={true}
@@ -180,7 +180,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id={`sql-order-${htmlId}`}
-              label="Order"
+              label="Сортировка"
               data-testid={selectors.components.SQLQueryEditor.headerOrderSwitch}
               transparent={true}
               showLabel={true}
@@ -201,7 +201,7 @@ export function QueryHeader({
 
             <InlineSwitch
               id={`sql-preview-${htmlId}`}
-              label="Preview"
+              label="Предпросмотр"
               data-testid={selectors.components.SQLQueryEditor.headerPreviewSwitch}
               transparent={true}
               showLabel={true}
@@ -226,15 +226,15 @@ export function QueryHeader({
 
         {isQueryRunnable ? (
           <Button icon="play" variant="primary" size="sm" onClick={() => onRunQuery()}>
-            Run query
+            Запустить запрос
           </Button>
         ) : (
           <Tooltip
             theme="error"
             content={
               <>
-                Your query is invalid. Check below for details. <br />
-                However, you can still run this query.
+                Ваш запрос недействителен. Подробности см. ниже. <br />
+                Однако вы все равно можете выполнить этот запрос.
               </>
             }
             placement="top"
@@ -295,7 +295,7 @@ export function QueryHeader({
           <Space v={0.5} />
           <EditorRow>
             {datasetDropdownIsAvailable() && (
-              <EditorField label="Dataset" width={25}>
+              <EditorField label="Набор данных" width={25}>
                 <DatasetSelector
                   db={db}
                   inputId={`sql-dataset-${htmlId}`}
@@ -306,7 +306,7 @@ export function QueryHeader({
                 />
               </EditorField>
             )}
-            <EditorField label="Table" width={25}>
+            <EditorField label="Таблица" width={25}>
               <TableSelector
                 db={db}
                 inputId={`sql-tableselect-${htmlId}`}

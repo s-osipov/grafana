@@ -161,7 +161,7 @@ transformers['annotations'] = {
 };
 
 transformers['table'] = {
-  description: 'Table',
+  description: 'Таблица',
   getColumns: (data) => {
     if (!data || data.length === 0) {
       return [];
@@ -210,7 +210,7 @@ transformers['table'] = {
 };
 
 transformers['json'] = {
-  description: 'JSON Data',
+  description: 'JSON',
   getColumns: (data) => {
     if (!data || data.length === 0) {
       return [];

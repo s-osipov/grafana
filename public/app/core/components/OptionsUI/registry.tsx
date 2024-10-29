@@ -56,36 +56,36 @@ import { UnitValueEditor } from './units';
 export const getAllOptionEditors = () => {
   const number: StandardEditorsRegistryItem<number> = {
     id: 'number',
-    name: 'Number',
-    description: 'Allows numeric values input',
+    name: 'Число',
+    description: 'Позволяет вводить числовые значения',
     editor: NumberValueEditor,
   };
 
   const slider: StandardEditorsRegistryItem<number> = {
     id: 'slider',
-    name: 'Slider',
-    description: 'Allows numeric values input',
+    name: 'Слайдер',
+    description: 'Позволяет вводить числовые значения',
     editor: SliderValueEditor,
   };
 
   const text: StandardEditorsRegistryItem<string> = {
     id: 'text',
-    name: 'Text',
-    description: 'Allows string values input',
+    name: 'Текст',
+    description: 'Позволяет вводить строковые значения',
     editor: StringValueEditor,
   };
 
   const strings: StandardEditorsRegistryItem<string[]> = {
     id: 'strings',
-    name: 'String array',
-    description: 'An array of strings',
+    name: 'Массив строк',
+    description: 'Массив строк',
     editor: StringArrayEditor,
   };
 
   const boolean: StandardEditorsRegistryItem<boolean> = {
     id: 'boolean',
-    name: 'Boolean',
-    description: 'Allows boolean values input',
+    name: 'Булево',
+    description: 'Позволяет вводить логические значения',
     editor(props) {
       const { id, ...rest } = props; // Remove id from properties passed into switch
       return <Switch {...rest} onChange={(e) => props.onChange(e.currentTarget.checked)} />;
@@ -94,22 +94,22 @@ export const getAllOptionEditors = () => {
 
   const select: StandardEditorsRegistryItem = {
     id: 'select',
-    name: 'Select',
-    description: 'Allows option selection',
+    name: 'Селект',
+    description: 'Позволяет выбрать вариант',
     editor: SelectValueEditor,
   };
 
   const multiSelect: StandardEditorsRegistryItem = {
     id: 'multi-select',
-    name: 'Multi select',
-    description: 'Allows for multiple option selection',
+    name: 'Мультиселект',
+    description: 'Позволяет выбрать несколько вариантов',
     editor: MultiSelectValueEditor,
   };
 
   const radio: StandardEditorsRegistryItem = {
     id: 'radio',
-    name: 'Radio',
-    description: 'Allows option selection',
+    name: 'Радио',
+    description: 'Позволяет выбрать вариант',
     editor(props) {
       return <RadioButtonGroup {...props} options={props.item.settings?.options} />;
     },
@@ -117,15 +117,15 @@ export const getAllOptionEditors = () => {
 
   const unit: StandardEditorsRegistryItem<string> = {
     id: 'unit',
-    name: 'Unit',
-    description: 'Allows unit input',
+    name: 'Единица измерения',
+    description: 'Позволяет вводить единицы измерения',
     editor: UnitValueEditor,
   };
 
   const color: StandardEditorsRegistryItem<string, ColorValueEditorSettings> = {
     id: 'color',
-    name: 'Color',
-    description: 'Allows color selection',
+    name: 'Цвет',
+    description: 'Позволяет выбрать цвет',
     editor(props) {
       return (
         <ColorValueEditor value={props.value} onChange={props.onChange} settings={props.item.settings} details={true} />
@@ -135,22 +135,22 @@ export const getAllOptionEditors = () => {
 
   const fieldColor: StandardEditorsRegistryItem<FieldColor | undefined> = {
     id: 'fieldColor',
-    name: 'Field Color',
-    description: 'Field color selection',
+    name: 'Цвет поля',
+    description: 'Выбор цвета поля',
     editor: FieldColorEditor,
   };
 
   const links: StandardEditorsRegistryItem<DataLink[]> = {
     id: 'links',
-    name: 'Links',
-    description: 'Allows defining data links',
+    name: 'Ссылки',
+    description: 'Позволяет определять ссылки на данные',
     editor: DataLinksValueEditor,
   };
 
   const actions: StandardEditorsRegistryItem<Action[]> = {
     id: 'actions',
-    name: 'Actions',
-    description: 'Allows defining actions',
+    name: 'Действия',
+    description: 'Позволяет определять действия',
     editor: ActionsValueEditor,
   };
 
@@ -163,36 +163,36 @@ export const getAllOptionEditors = () => {
 
   const timeZone: StandardEditorsRegistryItem<TimeZone> = {
     id: 'timezone',
-    name: 'Time zone',
-    description: 'Time zone selection',
+    name: 'Временная зона',
+    description: 'Выбор временной зоны',
     editor: TimeZonePicker,
   };
 
   const fieldName: StandardEditorsRegistryItem<string, FieldNamePickerConfigSettings> = {
     id: 'field-name',
-    name: 'Field name',
-    description: 'Allows selecting a field name from a data frame',
+    name: 'Имя поля',
+    description: 'Позволяет выбрать имя поля из фрейма данных',
     editor: FieldNamePicker,
   };
 
   const dashboardPicker: StandardEditorsRegistryItem<string, DashboardPickerOptions> = {
     id: 'dashboard-uid',
-    name: 'Dashboard',
-    description: 'Select dashboard',
+    name: 'Дашборд',
+    description: 'Выбор дашборда',
     editor: DashboardPicker,
   };
 
   const mappings: StandardEditorsRegistryItem<ValueMapping[]> = {
     id: 'mappings',
-    name: 'Mappings',
-    description: 'Allows defining value mappings',
+    name: 'Сопоставления',
+    description: 'Позволяет определять сопоставления значений',
     editor: ValueMappingsEditor,
   };
 
   const thresholds: StandardEditorsRegistryItem<ThresholdsConfig> = {
     id: 'thresholds',
-    name: 'Thresholds',
-    description: 'Allows defining thresholds',
+    name: 'Пороги',
+    description: 'Позволяет определять пороговые значения',
     editor: ThresholdsValueEditor,
   };
 
