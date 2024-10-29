@@ -86,7 +86,7 @@ export const TransformationEditor = ({
     <div data-testid={selectors.components.TransformTab.transformationEditor(uiConfig.name)}>
       {editor}
       {debugMode && (
-        <Drawer title="Debug transformation" subtitle={uiConfig.name} onClose={toggleShowDebug}>
+        <Drawer title="Отладка преобразования" subtitle={uiConfig.name} onClose={toggleShowDebug}>
           <div
             className={styles.debugWrapper}
             data-testid={selectors.components.TransformTab.transformationEditorDebugger(uiConfig.name)}

@@ -56,7 +56,7 @@ class SubMenuUnConnected extends PureComponent<Props> {
 
     return (
       <div className={styles.submenu}>
-        <form aria-label="Template variables" className={styles.formStyles} onSubmit={this.disableSubmitOnEnter}>
+        <form aria-label="Переменные шаблона" className={styles.formStyles} onSubmit={this.disableSubmitOnEnter}>
           <SubMenuItems variables={variables} readOnly={readOnlyVariables} />
         </form>
         <Annotations

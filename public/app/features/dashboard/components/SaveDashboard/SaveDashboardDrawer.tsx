@@ -102,11 +102,11 @@ export const SaveDashboardDrawer = ({ dashboard, onDismiss, onSaveSuccess, isCop
     );
   }
 
-  let title = 'Save dashboard';
+  let title = 'Сохранить дашборд';
   if (isCopy) {
-    title = 'Save dashboard copy';
+    title = 'Сохранить копию дашборда';
   } else if (isProvisioned) {
-    title = 'Provisioned dashboard';
+    title = 'Предоставленный дашборд';
   }
 
   return (
@@ -116,9 +116,9 @@ export const SaveDashboardDrawer = ({ dashboard, onDismiss, onSaveSuccess, isCop
       subtitle={dashboard.title}
       tabs={
         <TabsBar>
-          <Tab label={'Details'} active={!showDiff} onChangeTab={() => setShowDiff(false)} />
+          <Tab label={'Детали'} active={!showDiff} onChangeTab={() => setShowDiff(false)} />
           {data.hasChanges && (
-            <Tab label={'Changes'} active={showDiff} onChangeTab={() => setShowDiff(true)} counter={data.diffCount} />
+            <Tab label={'Изменения'} active={showDiff} onChangeTab={() => setShowDiff(true)} counter={data.diffCount} />
           )}
         </TabsBar>
       }

@@ -34,7 +34,7 @@ export class PanelDataTransformationsTab
   tabId = TabId.Transformations;
 
   getTabLabel() {
-    return 'Transformations';
+    return 'Преобразования';
   }
 
   public renderTab(props: PanelDataTabHeaderProps) {
@@ -112,7 +112,7 @@ export function PanelDataTransformationsTabRendered({ model }: SceneComponentPro
           onClick={openDrawer}
           data-testid={selectors.components.Transforms.addTransformationButton}
         >
-          Add another transformation
+          Добавить другое преобразование
         </Button>
         <Button
           data-testid={selectors.components.Transforms.removeAllTransformationsButton}
@@ -126,9 +126,9 @@ export function PanelDataTransformationsTabRendered({ model }: SceneComponentPro
       </ButtonGroup>
       <ConfirmModal
         isOpen={confirmModalOpen}
-        title="Delete all transformations?"
-        body="By deleting all transformations, you will go back to the main selection screen."
-        confirmText="Delete all"
+        title="Удалить все преобразования?"
+        body="Удалив все преобразования, вы вернетесь на главный экран выбора."
+        confirmText="Удалить все"
         onConfirm={() => {
           model.onChangeTransformations([]);
           setConfirmModalOpen(false);

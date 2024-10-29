@@ -72,14 +72,14 @@ export function TransformationPickerNg(props: TransformationPickerNgProps) {
       onClose={() => {
         onClose && onClose();
       }}
-      title="Add another transformation"
+      title="Добавить другое преобразование"
     >
       <div className={styles.searchWrapper}>
         <Input
           data-testid={selectors.components.Transforms.searchInput}
           className={styles.searchInput}
           value={search ?? ''}
-          placeholder="Search for transformation"
+          placeholder="Искать"
           onChange={onSearchChange}
           onKeyDown={onSearchKeyDown}
           suffix={suffix}
@@ -288,24 +288,24 @@ const getImagePath = (id: string, disabled: boolean) => {
 };
 
 const TransformationDescriptionOverrides: { [key: string]: string } = {
-  [DataTransformerID.concatenate]: 'Combine all fields into a single frame.',
-  [DataTransformerID.configFromData]: 'Set unit, min, max and more.',
-  [DataTransformerID.fieldLookup]: 'Use a field value to lookup countries, states, or airports.',
-  [DataTransformerID.filterFieldsByName]: 'Remove parts of the query results using a regex pattern.',
-  [DataTransformerID.filterByRefId]: 'Remove rows from the data based on origin query',
-  [DataTransformerID.filterByValue]: 'Remove rows from the query results using user-defined filters.',
-  [DataTransformerID.groupBy]: 'Group data by a field value and create aggregate data.',
-  [DataTransformerID.groupingToMatrix]: 'Summarize and reorganize data based on three fields.',
-  [DataTransformerID.joinByField]: 'Combine rows from 2+ tables, based on a related field.',
-  [DataTransformerID.labelsToFields]: 'Group series by time and return labels or tags as fields.',
-  [DataTransformerID.merge]: 'Merge multiple series. Values will be combined into one row.',
-  [DataTransformerID.organize]: 'Re-order, hide, or rename fields.',
-  [DataTransformerID.partitionByValues]: 'Split a one-frame dataset into multiple series.',
-  [DataTransformerID.prepareTimeSeries]: 'Stretch data frames from the wide format into the long format.',
-  [DataTransformerID.reduce]: 'Reduce all rows or data points to a single value (ex. max, mean).',
+  [DataTransformerID.concatenate]: 'Объедините все поля в один кадр.',
+  [DataTransformerID.configFromData]: 'Установите единицу измерения, мин, максимум и многое другое.',
+  [DataTransformerID.fieldLookup]: 'Используйте значение поля для поиска стран, штатов или аэропортов.',
+  [DataTransformerID.filterFieldsByName]: 'Удалите части результатов запроса, используя шаблон регулярного выражения.',
+  [DataTransformerID.filterByRefId]: 'Удалить строки из данных на основе исходного запроса',
+  [DataTransformerID.filterByValue]: 'Удаляйте строки из результатов запроса с помощью пользовательских фильтров.',
+  [DataTransformerID.groupBy]: 'Группируйте данные по значению поля и создавайте агрегированные данные.',
+  [DataTransformerID.groupingToMatrix]: 'Суммируйте и реорганизуйте данные на основе трех полей.',
+  [DataTransformerID.joinByField]: 'Объедините строки из двух+ таблиц на основе связанного поля.',
+  [DataTransformerID.labelsToFields]: 'Группируйте серии по времени и возвращайте метки или теги в виде полей.',
+  [DataTransformerID.merge]: 'Объединить несколько серий. Значения будут объединены в одну строку.',
+  [DataTransformerID.organize]: 'Измените порядок, скройте или переименуйте поля.',
+  [DataTransformerID.partitionByValues]: 'Разделите набор данных из одного кадра на несколько серий.',
+  [DataTransformerID.prepareTimeSeries]: 'Растягивайте кадры данных из широкого формата в длинный формат.',
+  [DataTransformerID.reduce]: 'Сократите все строки или точки данных до одного значения (например, максимальное, среднее).',
   [DataTransformerID.renameByRegex]:
-    'Rename parts of the query results using a regular expression and replacement pattern.',
-  [DataTransformerID.seriesToRows]: 'Merge multiple series. Return time, metric and values as a row.',
+    'Переименуйте части результатов запроса, используя регулярное выражение и шаблон замены.',
+  [DataTransformerID.seriesToRows]: 'Объединить несколько серий. Возвращает время, метрику и значения в виде строки.',
 };
 
 const getTransformationsRedesignDescriptions = (id: string): string => {

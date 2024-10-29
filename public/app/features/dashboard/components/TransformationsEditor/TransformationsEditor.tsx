@@ -328,7 +328,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
             onClick={() => {
               this.setState({ search: '' });
             }}
-            tooltip="Clear search"
+            tooltip="Очистить поиск"
           />
         </>
       );
@@ -343,7 +343,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
           onClick={() => {
             this.setState({ showPicker: false });
           }}
-          tooltip="Close picker"
+          tooltip="Закрыть пикер"
         />
       );
     }
@@ -384,9 +384,9 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
           </Button>
           <ConfirmModal
             isOpen={Boolean(this.state.showRemoveAllModal)}
-            title="Delete all transformations?"
-            body="By deleting all transformations, you will go back to the main selection screen."
-            confirmText="Delete all"
+            title="Удалить все преобразования?"
+            body="Удалив все преобразования, вы вернетесь на главный экран выбора."
+            confirmText="Удалить все"
             onConfirm={() => this.onTransformationRemoveAll()}
             onDismiss={() => this.setState({ showRemoveAllModal: false })}
           />
@@ -421,7 +421,7 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
           }}
           data-testid={selectors.components.Transforms.addTransformationButton}
         >
-          Add another transformation
+          Добавить другую трансформацию
         </Button>
         {deleteAll}
       </ButtonGroup>
@@ -453,8 +453,8 @@ class UnThemedTransformationsEditor extends React.PureComponent<TransformationsE
     // we can't use transformations
     if (alert) {
       const message = hasTransforms
-        ? "Transformations can't be used on a panel with alerts"
-        : "Transformations can't be used on a panel with existing alerts";
+        ? "Преобразования нельзя использовать на панели с оповещениями"
+        : "Преобразования нельзя использовать на панели с существующими оповещениями";
       return <PanelNotSupported message={message} />;
     }
 

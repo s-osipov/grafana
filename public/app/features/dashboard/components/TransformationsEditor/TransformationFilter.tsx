@@ -30,15 +30,15 @@ export const TransformationFilter = ({ index, data, config, onChange }: Transfor
       showTopic: true || data.annotations?.length || config.topic?.length,
       showFilter: config.topic !== DataTopic.Annotations,
       source: [
-        { value: DataTopic.Series, label: `Query results` },
-        { value: DataTopic.Annotations, label: `Annotation data` },
+        { value: DataTopic.Series, label: `Результаты запроса` },
+        { value: DataTopic.Annotations, label: `Данные аннотации` },
       ],
     };
   }, [data, config.topic]);
 
   return (
     <div className={styles.wrapper}>
-      <Field label="Apply transformation to">
+      <Field label="Применить трансформацию к">
         <>
           {opts.showTopic && (
             <Select

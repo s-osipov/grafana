@@ -36,18 +36,16 @@ export function TransformationPicker(props: TransformationPickerProps) {
 
               return (
                 <Alert
-                  title="Transformations"
+                  title="Преобразования"
                   severity="info"
                   onRemove={() => {
                     onDismiss(true);
                   }}
                 >
                   <p>
-                    Transformations allow you to join, calculate, re-order, hide, and rename your query results before
-                    they are visualized. <br />
-                    Many transforms are not suitable if you&apos;re using the Graph visualization, as it currently only
-                    supports time series data. <br />
-                    It can help to switch to the Table visualization to understand what a transformation is doing.{' '}
+                    Преобразования позволяют объединять, вычислять, изменять порядок, скрывать и переименовывать результаты запроса перед их визуализацией. <br />
+                    Многие преобразования не подходят, если вы используете визуализацию «График», поскольку в настоящее время она поддерживает только данные временных рядов. <br />
+                    Переключение на визуализацию таблицы может помочь понять, что происходит при преобразовании.{' '}
                   </p>
                   <a
                     href={getDocsLink(DocsId.Transformations)}
@@ -67,7 +65,7 @@ export function TransformationPicker(props: TransformationPickerProps) {
         data-testid={selectors.components.Transforms.searchInput}
         value={search ?? ''}
         autoFocus={!noTransforms}
-        placeholder="Search for transformation"
+        placeholder="Поиск"
         onChange={onSearchChange}
         onKeyDown={onSearchKeyDown}
         suffix={suffix}

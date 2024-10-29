@@ -36,23 +36,22 @@ function DashboardValidation({ dashboard }: DashboardValidationProps) {
   let alert: React.ReactNode;
 
   if (loading) {
-    alert = <Alert severity="info" title="Checking dashboard validity" />;
+    alert = <Alert severity="info" title="Проверка достоверности панели управления" />;
   } else if (value) {
     if (!value.isValid) {
       alert = (
-        <Alert severity="warning" title="Dashboard failed schema validation">
+        <Alert severity="warning" title="Не удалось проверить схему дашборда">
           <p>
-            Validation is provided for development purposes and should be safe to ignore. If you are a Grafana
-            developer, consider checking and updating the dashboard schema
+          Проверка предусмотрена для целей разработки, и ее можно безопасно игнорировать. Если вы разработчик Grafana, рассмотрите возможность проверки и обновления схемы информационной панели
           </p>
           <div className={styles.error}>{value.message}</div>
         </Alert>
       );
     }
   } else {
-    const errorMessage = error?.message ?? 'Unknown error';
+    const errorMessage = error?.message ?? 'Неизвестная ошибка';
     alert = (
-      <Alert severity="info" title="Error checking dashboard validity">
+      <Alert severity="info" title="Ошибка проверки достоверности информационной панели">
         <p className={styles.error}>{errorMessage}</p>
       </Alert>
     );

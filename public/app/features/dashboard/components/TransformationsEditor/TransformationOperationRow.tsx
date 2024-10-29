@@ -97,7 +97,7 @@ export const TransformationOperationRow = ({
       <>
         {uiConfig.state && <PluginStateInfo state={uiConfig.state} />}
         <QueryOperationToggleAction
-          title="Show transform help"
+          title="Показать справку по преобразованию"
           icon="info-circle"
           // `instrumentToggleCallback` expects a function that takes a MouseEvent, is unused in the state setter. Instead, we simply toggle the state.
           onClick={instrumentToggleCallback(toggleShowHelp, 'help', showHelp)}
@@ -105,27 +105,27 @@ export const TransformationOperationRow = ({
         />
         {showFilterToggle && (
           <QueryOperationToggleAction
-            title="Filter"
+            title="Фильтр"
             icon="filter"
             onClick={instrumentToggleCallback(toggleFilter, 'filter', showFilterEditor)}
             active={showFilterEditor}
           />
         )}
         <QueryOperationToggleAction
-          title="Debug"
+          title="Дебаг"
           icon="bug"
           onClick={instrumentToggleCallback(toggleShowDebug, 'debug', showDebug)}
           active={showDebug}
         />
         <QueryOperationToggleAction
-          title="Disable transformation"
+          title="Отключить трансформацию"
           icon={disabled ? 'eye-slash' : 'eye'}
           onClick={instrumentToggleCallback(() => onDisableToggle(index), 'disabled', disabled)}
           active={disabled}
           dataTestId={selectors.components.Transforms.disableTransformationButton}
         />
         <QueryOperationAction
-          title="Remove"
+          title="Удалить"
           icon="trash-alt"
           onClick={() => (config.featureToggles.transformationsRedesign ? setShowDeleteModal(true) : onRemove(index))}
         />
@@ -133,9 +133,9 @@ export const TransformationOperationRow = ({
         {config.featureToggles.transformationsRedesign && (
           <ConfirmModal
             isOpen={showDeleteModal}
-            title={`Delete ${uiConfig.name}?`}
-            body="Note that removing one transformation may break others. If there is only a single transformation, you will go back to the main selection screen."
-            confirmText="Delete"
+            title={`Удалить ${uiConfig.name}?`}
+            body="Обратите внимание, что удаление одного преобразования может привести к поломке других. Если есть только одно преобразование, вы вернетесь на главный экран выбора."
+            confirmText="Удалить"
             onConfirm={() => {
               setShowDeleteModal(false);
               onRemove(index);
@@ -157,8 +157,8 @@ export const TransformationOperationRow = ({
         actions={renderActions}
         disabled={disabled}
         expanderMessages={{
-          close: 'Collapse transformation row',
-          open: 'Expand transformation row',
+          close: 'Свернуть строку преобразования',
+          open: 'Развернуть строку преобразования',
         }}
       >
         {showFilterEditor && (

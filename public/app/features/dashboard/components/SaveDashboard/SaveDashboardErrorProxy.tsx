@@ -37,13 +37,13 @@ export const SaveDashboardErrorProxy = ({
       {error.data && error.data.status === 'version-mismatch' && (
         <ConfirmModal
           isOpen={true}
-          title="Conflict"
+          title="Конфликты"
           body={
             <div>
-              Someone else has updated this dashboard <br /> <small>Would you still like to save this dashboard?</small>
+              Кто-то еще обновил эту панель управления <br /> <small>Хотите ли вы сохранить этот дашборд?</small>
             </div>
           }
-          confirmText="Save and overwrite"
+          confirmText="Сохранить и перезаписать"
           onConfirm={async () => {
             await onDashboardSave(dashboardSaveModel, { overwrite: true }, dashboard);
             onDismiss();
@@ -74,14 +74,14 @@ export const SaveDashboardErrorProxy = ({
           ) : (
             <ConfirmModal
               isOpen={true}
-              title="Conflict"
+              title="Конфликт"
               body={
                 <div>
-                  A dashboard with the same name in selected folder already exists. <br />
-                  <small>Would you still like to save this dashboard?</small>
+                  Панель управления с таким именем в выбранной папке уже существует. <br />
+                  <small>Хотите ли вы сохранить этот дашборд?</small>
                 </div>
               }
-              confirmText="Save and overwrite"
+              confirmText="Сохранить и перезаписать"
               onConfirm={async () => {
                 await onDashboardSave(dashboardSaveModel, { overwrite: true }, dashboard);
                 onDismiss();
