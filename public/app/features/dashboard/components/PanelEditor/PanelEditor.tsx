@@ -325,13 +325,13 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
     let editorActions = [
       <Button
         onClick={this.onDiscard}
-        title="Undo all changes"
+        title="Отменить все изменения"
         key="discard"
         size={size}
         variant="destructive"
         fill="outline"
       >
-        Discard
+        Отменить
       </Button>,
       this.props.dashboard.meta.canSave &&
         (this.props.panel.libraryPanel ? (
@@ -339,31 +339,31 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
             onClick={this.onSaveLibraryPanel}
             variant="primary"
             size={size}
-            title="Apply changes and save library panel"
+            title="Применить изменения и сохранить панель библиотеки"
             key="save-panel"
           >
-            Save library panel
+            Сохранить панель библиотеки
           </Button>
         ) : (
           <Button
             onClick={this.onSaveDashboard}
-            title="Apply changes and save dashboard"
+            title="Применить изменения и сохранить дашборд"
             key="save"
             size={size}
             variant="secondary"
           >
-            Save
+            Сохранить
           </Button>
         )),
       <Button
         onClick={this.onBack}
         variant="primary"
-        title="Apply changes and go back to dashboard"
+        title="Примените изменения и вернитесь на панель управления"
         data-testid={selectors.components.PanelEditor.applyButton}
         key="apply"
         size={size}
       >
-        Apply
+        Принять
       </Button>,
     ];
 
@@ -385,10 +385,10 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
                     isOpen: true,
                   });
                 }}
-                title="Disconnects this panel from the library panel so that you can edit it regularly."
+                title="Отключает эту панель от панели библиотеки, чтобы вы могли регулярно ее редактировать."
                 key="unlink"
               >
-                Unlink
+                Отсоединить
               </ToolbarButton>
             );
           }}

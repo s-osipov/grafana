@@ -305,10 +305,10 @@ export class DashboardScene extends SceneObjectBase<DashboardSceneState> {
 
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Discard changes to dashboard?',
-        text: `You have unsaved changes to this dashboard. Are you sure you want to discard them?`,
+        title: 'Отменить изменения в панели управления?',
+        text: `У вас есть несохраненные изменения в этой информационной панели. Вы уверены, что хотите их удалить?`,
         icon: 'trash-alt',
-        yesText: 'Discard',
+        yesText: 'Отменить',
         onConfirm: () => {
           this.exitEditModeConfirmed();
           this._scopesFacade?.exitReadOnly();
@@ -420,7 +420,7 @@ export class DashboardScene extends SceneObjectBase<DashboardSceneState> {
     const { meta, viewPanelScene, editPanel } = this.state;
 
     if (meta.dashboardNotFound) {
-      return { text: 'Not found' };
+      return { text: 'Не найдено' };
     }
 
     let pageNav: NavModelItem = {
@@ -450,7 +450,7 @@ export class DashboardScene extends SceneObjectBase<DashboardSceneState> {
 
     if (viewPanelScene) {
       pageNav = {
-        text: 'View panel',
+        text: 'Панель просмотра',
         parentItem: pageNav,
         url: getViewPanelUrl(viewPanelScene.state.panelRef.resolve()),
       };
@@ -458,7 +458,7 @@ export class DashboardScene extends SceneObjectBase<DashboardSceneState> {
 
     if (editPanel) {
       pageNav = {
-        text: 'Edit panel',
+        text: 'Панель редактирования',
         parentItem: pageNav,
       };
     }
