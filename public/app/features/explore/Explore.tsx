@@ -364,7 +364,7 @@ export class Explore extends PureComponent<Props, ExploreState> {
     const { graphResult, timeZone, queryResponse, showFlameGraph } = this.props;
 
     return (
-      <ContentOutlineItem panelId="Graph" title="Graph" icon="graph-bar">
+      <ContentOutlineItem panelId="Graph" title="Граф" icon="graph-bar">
         <GraphContainer
           data={graphResult!}
           height={showFlameGraph ? 180 : 400}
@@ -384,7 +384,7 @@ export class Explore extends PureComponent<Props, ExploreState> {
   renderTablePanel(width: number) {
     const { exploreId, timeZone } = this.props;
     return (
-      <ContentOutlineItem panelId="Table" title="Table" icon="table">
+      <ContentOutlineItem panelId="Table" title="Таблица" icon="table">
         <TableContainer
           ariaLabel={selectors.pages.Explore.General.table}
           width={width}
@@ -424,7 +424,7 @@ export class Explore extends PureComponent<Props, ExploreState> {
       gap: theme.spacing(1),
     });
     return (
-      <ContentOutlineItem panelId="Logs" title="Logs" icon="gf-logs" className={logsContentOutlineWrapper}>
+      <ContentOutlineItem panelId="Logs" title="Логи" icon="gf-logs" className={logsContentOutlineWrapper}>
         <LogsContainer
           exploreId={exploreId}
           loadingState={queryResponse.state}
@@ -586,7 +586,7 @@ export class Explore extends PureComponent<Props, ExploreState> {
               <div className={styles.exploreContainer}>
                 {datasourceInstance ? (
                   <>
-                    <ContentOutlineItem panelId="Queries" title="Queries" icon="arrow" mergeSingleChild={true}>
+                    <ContentOutlineItem panelId="Queries" title="Запросы" icon="arrow" mergeSingleChild={true}>
                       <PanelContainer className={styles.queryContainer}>
                         {correlationsBox}
                         <QueryRows exploreId={exploreId} />

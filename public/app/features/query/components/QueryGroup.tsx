@@ -409,7 +409,7 @@ export function QueryGroupTopSection({
       <div data-testid={selectors.components.QueryTab.queryGroupTopSection}>
         <div className={styles.dataSourceRow}>
           <InlineFormLabel htmlFor="data-source-picker" width={'auto'}>
-            Data source
+            Источник данных
           </InlineFormLabel>
           <div className={styles.dataSourceRowItem}>
             <DataSourcePickerWithPrompt
@@ -426,7 +426,7 @@ export function QueryGroupTopSection({
                 <Button
                   variant="secondary"
                   icon="question-circle"
-                  title="Open data source help"
+                  title="Открыть помощь"
                   onClick={() => setIsHelpOpen(true)}
                   data-testid="query-tab-help-button"
                 />
@@ -448,7 +448,7 @@ export function QueryGroupTopSection({
                     onClick={onOpenQueryInspector}
                     aria-label={selectors.components.QueryTab.queryInspectorButton}
                   >
-                    Query inspector
+                    Инспектор запросов
                   </Button>
                 </div>
               )}
@@ -466,7 +466,7 @@ export function QueryGroupTopSection({
         )}
       </div>
       {isHelpOpen && (
-        <Modal title="Data source help" isOpen={true} onDismiss={() => setIsHelpOpen(false)}>
+        <Modal title="Справка по источникам данных" isOpen={true} onDismiss={() => setIsHelpOpen(false)}>
           <PluginHelp pluginId={dsSettings.meta.id} />
         </Modal>
       )}
