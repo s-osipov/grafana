@@ -131,7 +131,7 @@ export const plugin = new PanelPlugin<Options, FieldConfig>(TablePanel)
         category: [footerCategory],
         path: 'footer.reducer',
         name: 'Расчет',
-        description: 'Выберите функцию редуктора/расчет',
+        description: 'Выберите функцию редукции/расчет',
         editor: standardEditorsRegistry.get('stats-picker').editor,
         defaultValue: [ReducerID.sum],
         showIf: (cfg) => cfg.footer?.show,

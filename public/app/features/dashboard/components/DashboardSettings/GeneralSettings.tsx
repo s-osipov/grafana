@@ -29,9 +29,9 @@ import { SettingsPageProps } from './types';
 export type Props = SettingsPageProps & ConnectedProps<typeof connector>;
 
 const GRAPH_TOOLTIP_OPTIONS = [
-  { value: 0, label: 'Default' },
-  { value: 1, label: 'Shared crosshair' },
-  { value: 2, label: 'Shared Tooltip' },
+  { value: 0, label: 'По умолчанию' },
+  { value: 1, label: 'Общее перекрытие' },
+  { value: 2, label: 'Общая подсказка' },
 ];
 
 export function GeneralSettingsUnconnected({
@@ -115,8 +115,8 @@ export function GeneralSettingsUnconnected({
   };
 
   const editableOptions = [
-    { label: 'Editable', value: true },
-    { label: 'Read-only', value: false },
+    { label: 'Редактируемый', value: true },
+    { label: 'Только для чтения', value: false },
   ];
 
   return (

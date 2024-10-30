@@ -88,7 +88,7 @@ export const TagsInput = ({
             size="md"
             disabled={newTagName.length <= 0}
           >
-            Add
+            Добавить
           </Button>
         }
       />
