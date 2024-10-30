@@ -27,7 +27,7 @@ export interface Props {
 }
 
 export const TagsInput = ({
-  placeholder = 'New tag (enter key to add)',
+  placeholder = 'Новый тэг',
   tags = [],
   onChange,
   width,

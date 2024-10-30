@@ -367,7 +367,7 @@
       "expand-folder-button": "Развернуть папку {{title}}",
       "name-column": "Имя",
       "select-all-header-checkbox": "Выбрать все",
-      "select-checkbox": "Выбирать",
+      "select-checkbox": "Выбрать",
       "tags-column": "Теги"
     },
     "empty-state": {
@@ -1010,7 +1010,7 @@
   "explore-metrics": {
     "breakdown": {
       "clearFilter": "Очистить фильтр",
-      "labelSelect": "Выбирать",
+      "labelSelect": "Выбрать",
       "noMatchingValue": "Не найдено соответствующих значений; {{filter}}"
     },
     "viewBy": "Посмотреть по"
@@ -1052,7 +1052,7 @@
     },
     "select": {
       "no-options-label": "Вариантов не найдено",
-      "placeholder": "Выбирать"
+      "placeholder": "Выбрать"
     },
     "spinner": {
       "aria-label": "Загрузка"

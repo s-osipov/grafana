@@ -7,28 +7,28 @@ export function addTooltipOptions<T extends OptionsWithTooltip>(
   setProximity = false,
   defaultOptions?: Partial<OptionsWithTooltip>
 ) {
-  const category = ['Tooltip'];
+  const category = ['Подсказка'];
   const modeOptions = singleOnly
     ? [
-        { value: TooltipDisplayMode.Single, label: 'Single' },
-        { value: TooltipDisplayMode.None, label: 'Hidden' },
+        { value: TooltipDisplayMode.Single, label: 'Один' },
+        { value: TooltipDisplayMode.None, label: 'Скрытый' },
       ]
     : [
-        { value: TooltipDisplayMode.Single, label: 'Single' },
-        { value: TooltipDisplayMode.Multi, label: 'All' },
-        { value: TooltipDisplayMode.None, label: 'Hidden' },
+        { value: TooltipDisplayMode.Single, label: 'Один' },
+        { value: TooltipDisplayMode.Multi, label: 'Все' },
+        { value: TooltipDisplayMode.None, label: 'Скрытый' },
       ];
 
   const sortOptions = [
-    { value: SortOrder.None, label: 'None' },
-    { value: SortOrder.Ascending, label: 'Ascending' },
-    { value: SortOrder.Descending, label: 'Descending' },
+    { value: SortOrder.None, label: 'Нет' },
+    { value: SortOrder.Ascending, label: 'По возрастанию' },
+    { value: SortOrder.Descending, label: 'По убыванию' },
   ];
 
   builder
     .addRadio({
       path: 'tooltip.mode',
-      name: 'Tooltip mode',
+      name: 'Режим подсказки',
       category,
       defaultValue: defaultOptions?.tooltip?.mode ?? TooltipDisplayMode.Single,
       settings: {
@@ -37,7 +37,7 @@ export function addTooltipOptions<T extends OptionsWithTooltip>(
     })
     .addRadio({
       path: 'tooltip.sort',
-      name: 'Values sort order',
+      name: 'Порядок сортировки значений',
       category,
       defaultValue: defaultOptions?.tooltip?.sort ?? SortOrder.None,
       showIf: (options: T) => options.tooltip?.mode === TooltipDisplayMode.Multi,
@@ -49,8 +49,8 @@ export function addTooltipOptions<T extends OptionsWithTooltip>(
   if (setProximity) {
     builder.addNumberInput({
       path: 'tooltip.hoverProximity',
-      name: 'Hover proximity',
-      description: 'How close the cursor must be to a point to trigger the tooltip, in pixels',
+      name: 'Близость наведения курсора',
+      description: 'Насколько близко курсор должен находиться к точке, чтобы вызвать всплывающую подсказку, в пикселях',
       category,
       settings: {
         integer: true,
@@ -62,7 +62,7 @@ export function addTooltipOptions<T extends OptionsWithTooltip>(
   builder
     .addNumberInput({
       path: 'tooltip.maxWidth',
-      name: 'Max width',
+      name: 'Макс ширина',
       category,
       settings: {
         integer: true,
@@ -71,7 +71,7 @@ export function addTooltipOptions<T extends OptionsWithTooltip>(
     })
     .addNumberInput({
       path: 'tooltip.maxHeight',
-      name: 'Max height',
+      name: 'Макс высота',
       category,
       defaultValue: undefined,
       settings: {

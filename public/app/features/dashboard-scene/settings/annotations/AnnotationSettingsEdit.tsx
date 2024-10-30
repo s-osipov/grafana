@@ -33,7 +33,7 @@ type Props = {
   onDelete: (index: number) => void;
 };
 
-export const newAnnotationName = 'New annotation';
+export const newAnnotationName = 'Новая аннотация';
 
 export const AnnotationSettingsEdit = ({ annotation, editIndex, panels, onUpdate, onBackToList, onDelete }: Props) => {
   const styles = useStyles2(getStyles);

@@ -29,7 +29,7 @@ export const FieldNamePicker = ({ value, onChange, context, item }: Props) => {
     <>
       <Select
         value={selectedOption}
-        placeholder={settings.placeholderText ?? 'Select field'}
+        placeholder={settings.placeholderText ?? 'Выберите поле'}
         options={selectOptions}
         onChange={onSelectChange}
         noOptionsMessage={settings.noFieldsMessage}

@@ -21,13 +21,13 @@ export function addAxisConfig(
   defaultConfig: AxisConfig,
   hideScale?: boolean
 ) {
-  const category = ['Axis'];
+  const category = ['Оси'];
 
   // options for axis appearance
   builder
     .addRadio({
       path: 'axisPlacement',
-      name: 'Placement',
+      name: 'Расположение',
       category,
       defaultValue: graphFieldOptions.axisPlacement[0].value,
       settings: {
@@ -36,11 +36,11 @@ export function addAxisConfig(
     })
     .addTextInput({
       path: 'axisLabel',
-      name: 'Label',
+      name: 'Подпись',
       category,
       defaultValue: '',
       settings: {
-        placeholder: 'Optional text',
+        placeholder: 'Дополнительный текст',
         expandTemplateVars: true,
       },
       showIf: (c) => c.axisPlacement !== AxisPlacement.Hidden,
@@ -49,43 +49,43 @@ export function addAxisConfig(
     })
     .addNumberInput({
       path: 'axisWidth',
-      name: 'Width',
+      name: 'Ширина',
       category,
       settings: {
-        placeholder: 'Auto',
+        placeholder: 'Авто',
       },
       showIf: (c) => c.axisPlacement !== AxisPlacement.Hidden,
     })
     .addRadio({
       path: 'axisGridShow',
-      name: 'Show grid lines',
+      name: 'Показать линии сетки',
       category,
       defaultValue: undefined,
       settings: {
         options: [
-          { value: undefined, label: 'Auto' },
-          { value: true, label: 'On' },
-          { value: false, label: 'Off' },
+          { value: undefined, label: 'Авто' },
+          { value: true, label: 'Вкл' },
+          { value: false, label: 'Выкл' },
         ],
       },
       showIf: (c) => c.axisPlacement !== AxisPlacement.Hidden,
     })
     .addRadio({
       path: 'axisColorMode',
-      name: 'Color',
+      name: 'Цвет',
       category,
       defaultValue: AxisColorMode.Text,
       settings: {
         options: [
-          { value: AxisColorMode.Text, label: 'Text' },
-          { value: AxisColorMode.Series, label: 'Series' },
+          { value: AxisColorMode.Text, label: 'Тект' },
+          { value: AxisColorMode.Series, label: 'Серия' },
         ],
       },
       showIf: (c) => c.axisPlacement !== AxisPlacement.Hidden,
     })
     .addBooleanSwitch({
       path: 'axisBorderShow',
-      name: 'Show border',
+      name: 'Показать границу',
       category,
       defaultValue: false,
       showIf: (c) => c.axisPlacement !== AxisPlacement.Hidden,
@@ -96,7 +96,7 @@ export function addAxisConfig(
     .addCustomEditor<void, ScaleDistributionConfig>({
       id: 'scaleDistribution',
       path: 'scaleDistribution',
-      name: 'Scale',
+      name: 'Масштаб',
       category,
       editor: ScaleDistributionEditor,
       override: ScaleDistributionEditor,
@@ -106,7 +106,7 @@ export function addAxisConfig(
     })
     .addBooleanSwitch({
       path: 'axisCenteredZero',
-      name: 'Centered zero',
+      name: 'Центрироваль по нулю',
       category,
       defaultValue: false,
       showIf: (c) => c.scaleDistribution?.type !== ScaleDistribution.Log,
@@ -117,7 +117,7 @@ export function addAxisConfig(
       defaultValue: defaultConfig.axisSoftMin,
       category,
       settings: {
-        placeholder: 'See: Standard options > Min',
+        placeholder: 'См.: Стандартные опции > Min',
       },
     })
     .addNumberInput({
@@ -126,22 +126,22 @@ export function addAxisConfig(
       defaultValue: defaultConfig.axisSoftMax,
       category,
       settings: {
-        placeholder: 'See: Standard options > Max',
+        placeholder: 'См.: Стандартные опции > Max',
       },
     });
 }
 
 const DISTRIBUTION_OPTIONS: Array<SelectableValue<ScaleDistribution>> = [
   {
-    label: 'Linear',
+    label: 'Линейный',
     value: ScaleDistribution.Linear,
   },
   {
-    label: 'Logarithmic',
+    label: 'Логарифмический',
     value: ScaleDistribution.Log,
   },
   {
-    label: 'Symlog',
+    label: 'Симлог',
     value: ScaleDistribution.Symlog,
   },
 ];
@@ -179,7 +179,7 @@ export const ScaleDistributionEditor = ({ value, onChange }: StandardEditorProps
         />
       </div>
       {(type === ScaleDistribution.Log || type === ScaleDistribution.Symlog) && (
-        <Field label="Log base">
+        <Field label="Логарифмическая основа">
           <Select
             options={LOG_DISTRIBUTION_OPTIONS}
             value={log}
@@ -193,7 +193,7 @@ export const ScaleDistributionEditor = ({ value, onChange }: StandardEditorProps
         </Field>
       )}
       {type === ScaleDistribution.Symlog && (
-        <Field label="Linear threshold">
+        <Field label="Линейный порог">
           <Input
             placeholder="1"
             value={value?.linearThreshold}

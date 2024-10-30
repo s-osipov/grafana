@@ -35,14 +35,14 @@ import { DashboardEditView, DashboardEditViewState, useDashboardEditPageNav } fr
 export interface GeneralSettingsEditViewState extends DashboardEditViewState {}
 
 const EDITABLE_OPTIONS = [
-  { label: 'Editable', value: true },
-  { label: 'Read-only', value: false },
+  { label: 'Редактируемый', value: true },
+  { label: 'Только для чтения', value: false },
 ];
 
 const GRAPH_TOOLTIP_OPTIONS = [
-  { value: 0, label: 'Default' },
-  { value: 1, label: 'Shared crosshair' },
-  { value: 2, label: 'Shared Tooltip' },
+  { value: 0, label: 'По умолчанию' },
+  { value: 1, label: 'Общее перекрытие' },
+  { value: 2, label: 'Общая подсказка' },
 ];
 
 export class GeneralSettingsEditView

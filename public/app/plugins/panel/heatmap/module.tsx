@@ -70,8 +70,8 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       category,
       settings: {
         options: [
-          { label: 'Yes', value: true },
-          { label: 'No', value: false },
+          { label: 'Да', value: true },
+          { label: 'Нет', value: false },
         ],
       },
     });
@@ -80,26 +80,26 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       addHeatmapCalculationOptions('calculation.', builder, opts.calculation, category);
     }
 
-    category = ['Y Axis'];
+    category = ['Ось Y'];
 
     builder
       .addRadio({
         path: 'yAxis.axisPlacement',
-        name: 'Placement',
+        name: 'Размещение',
         defaultValue: defaultOptions.yAxis.axisPlacement ?? AxisPlacement.Left,
         category,
         settings: {
           options: [
-            { label: 'Left', value: AxisPlacement.Left },
-            { label: 'Right', value: AxisPlacement.Right },
-            { label: 'Hidden', value: AxisPlacement.Hidden },
+            { label: 'Слева', value: AxisPlacement.Left },
+            { label: 'Справа', value: AxisPlacement.Right },
+            { label: 'Скрытый', value: AxisPlacement.Hidden },
           ],
         },
       })
       .addUnitPicker({
         category,
         path: 'yAxis.unit',
-        name: 'Unit',
+        name: 'Единица измерения',
         defaultValue: undefined,
         settings: {
           isClearable: true,
@@ -108,9 +108,9 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       .addNumberInput({
         category,
         path: 'yAxis.decimals',
-        name: 'Decimals',
+        name: 'Десятичные',
         settings: {
-          placeholder: 'Auto',
+          placeholder: 'Авто',
         },
       });
 
@@ -119,17 +119,17 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       builder
         .addNumberInput({
           path: 'yAxis.min',
-          name: 'Min value',
+          name: 'Мин значение',
           settings: {
-            placeholder: 'Auto',
+            placeholder: 'Авто',
           },
           category,
         })
         .addTextInput({
           path: 'yAxis.max',
-          name: 'Max value',
+          name: 'Макс значение',
           settings: {
-            placeholder: 'Auto',
+            placeholder: 'Авто',
           },
           category,
         });
@@ -138,20 +138,20 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     builder
       .addNumberInput({
         path: 'yAxis.axisWidth',
-        name: 'Axis width',
+        name: 'Ширина оси',
         defaultValue: defaultOptions.yAxis.axisWidth,
         settings: {
-          placeholder: 'Auto',
+          placeholder: 'Авто',
           min: 5, // smaller should just be hidden
         },
         category,
       })
       .addTextInput({
         path: 'yAxis.axisLabel',
-        name: 'Axis label',
+        name: 'Подпись оси',
         defaultValue: defaultOptions.yAxis.axisLabel,
         settings: {
-          placeholder: 'Auto',
+          placeholder: 'Авто',
         },
         category,
       });
@@ -159,44 +159,44 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     if (!opts.calculate) {
       builder.addRadio({
         path: 'rowsFrame.layout',
-        name: 'Tick alignment',
+        name: 'Выравнивание отметок',
         defaultValue: defaultOptions.rowsFrame?.layout ?? HeatmapCellLayout.auto,
         category,
         settings: {
           options: [
-            { label: 'Auto', value: HeatmapCellLayout.auto },
-            { label: 'Top (LE)', value: HeatmapCellLayout.le },
-            { label: 'Middle', value: HeatmapCellLayout.unknown },
-            { label: 'Bottom (GE)', value: HeatmapCellLayout.ge },
+            { label: 'Авто', value: HeatmapCellLayout.auto },
+            { label: 'Сверху (LE)', value: HeatmapCellLayout.le },
+            { label: 'По центру', value: HeatmapCellLayout.unknown },
+            { label: 'Снизу (GE)', value: HeatmapCellLayout.ge },
           ],
         },
       });
     }
     builder.addBooleanSwitch({
       path: 'yAxis.reverse',
-      name: 'Reverse',
+      name: 'Реверс',
       defaultValue: defaultOptions.yAxis.reverse === true,
       category,
     });
 
-    category = ['Colors'];
+    category = ['Цвета'];
 
     builder.addRadio({
       path: `color.mode`,
-      name: 'Mode',
+      name: 'Режим',
       defaultValue: defaultOptions.color.mode,
       category,
       settings: {
         options: [
-          { label: 'Scheme', value: HeatmapColorMode.Scheme },
-          { label: 'Opacity', value: HeatmapColorMode.Opacity },
+          { label: 'Схема', value: HeatmapColorMode.Scheme },
+          { label: 'Непрозрачность', value: HeatmapColorMode.Opacity },
         ],
       },
     });
 
     builder.addColorPicker({
       path: `color.fill`,
-      name: 'Color',
+      name: 'Цвет',
       defaultValue: defaultOptions.color.fill,
       category,
       showIf: (opts) => opts.color.mode === HeatmapColorMode.Opacity,
@@ -204,13 +204,13 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addRadio({
       path: `color.scale`,
-      name: 'Scale',
+      name: 'Масштаб',
       defaultValue: defaultOptions.color.scale,
       category,
       settings: {
         options: [
-          { label: 'Exponential', value: HeatmapColorScale.Exponential },
-          { label: 'Linear', value: HeatmapColorScale.Linear },
+          { label: 'Экспоненциальный', value: HeatmapColorScale.Exponential },
+          { label: 'Лмнейный', value: HeatmapColorScale.Linear },
         ],
       },
       showIf: (opts) => opts.color.mode === HeatmapColorMode.Opacity,
@@ -218,7 +218,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addSliderInput({
       path: 'color.exponent',
-      name: 'Exponent',
+      name: 'Порядок',
       defaultValue: defaultOptions.color.exponent,
       category,
       settings: {
@@ -232,7 +232,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addSelect({
       path: `color.scheme`,
-      name: 'Scheme',
+      name: 'Схема',
       description: '',
       defaultValue: defaultOptions.color.scheme,
       category,
@@ -249,7 +249,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     builder
       .addSliderInput({
         path: 'color.steps',
-        name: 'Steps',
+        name: 'Шаги',
         defaultValue: defaultOptions.color.steps,
         category,
         settings: {
@@ -260,7 +260,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       })
       .addBooleanSwitch({
         path: 'color.reverse',
-        name: 'Reverse',
+        name: 'Реверс',
         defaultValue: defaultOptions.color.reverse,
         category,
       })
@@ -282,32 +282,32 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     builder
       .addNumberInput({
         path: 'color.min',
-        name: 'Start color scale from value',
+        name: 'Начать цветовую шкалу со значения',
         defaultValue: defaultOptions.color.min,
         settings: {
-          placeholder: 'Auto (min)',
+          placeholder: 'Авто (мин)',
         },
         category,
       })
       .addNumberInput({
         path: 'color.max',
-        name: 'End color scale at value',
+        name: 'Закончить цветовую шкалу со значения',
         defaultValue: defaultOptions.color.max,
         settings: {
-          placeholder: 'Auto (max)',
+          placeholder: 'Авто (макс)',
         },
         category,
       });
 
-    category = ['Cell display'];
+    category = ['Отображение ячейки'];
 
     if (!opts.calculate) {
       builder.addTextInput({
         path: 'rowsFrame.value',
-        name: 'Value name',
+        name: 'Имя значения',
         defaultValue: defaultOptions.rowsFrame?.value,
         settings: {
-          placeholder: 'Value',
+          placeholder: 'Значение',
         },
         category,
       });
@@ -317,7 +317,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       .addUnitPicker({
         category,
         path: 'cellValues.unit',
-        name: 'Unit',
+        name: 'Единица измерения',
         defaultValue: undefined,
         settings: {
           isClearable: true,
@@ -326,9 +326,9 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       .addNumberInput({
         category,
         path: 'cellValues.decimals',
-        name: 'Decimals',
+        name: 'Десятичные',
         settings: {
-          placeholder: 'Auto',
+          placeholder: 'Авто',
         },
       });
 
@@ -358,19 +358,19 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
       })
       .addNumberInput({
         path: 'filterValues.le',
-        name: 'Hide cells with values <=',
+        name: 'Скрыть ячейки со значением <=',
         defaultValue: defaultOptions.filterValues?.le,
         settings: {
-          placeholder: 'None',
+          placeholder: 'Нет',
         },
         category,
       })
       .addNumberInput({
         path: 'filterValues.ge',
-        name: 'Hide cells with values >=',
+        name: 'Скрыть ячейки со значением >=',
         defaultValue: defaultOptions.filterValues?.ge,
         settings: {
-          placeholder: 'None',
+          placeholder: 'Нет',
         },
         category,
       });
@@ -385,25 +385,25 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     //   },
     // })
 
-    category = ['Tooltip'];
+    category = ['Подсказка'];
 
     builder.addRadio({
       path: 'tooltip.mode',
-      name: 'Tooltip mode',
+      name: 'Режим подсказки',
       category,
       defaultValue: TooltipDisplayMode.Single,
       settings: {
         options: [
-          { value: TooltipDisplayMode.Single, label: 'Single' },
-          { value: TooltipDisplayMode.Multi, label: 'All' },
-          { value: TooltipDisplayMode.None, label: 'Hidden' },
+          { value: TooltipDisplayMode.Single, label: 'Один' },
+          { value: TooltipDisplayMode.Multi, label: 'Все' },
+          { value: TooltipDisplayMode.None, label: 'Скрытый' },
         ],
       },
     });
 
     builder.addBooleanSwitch({
       path: 'tooltip.yHistogram',
-      name: 'Show histogram (Y axis)',
+      name: 'Показать гистогнрамму(ось Y)',
       defaultValue: defaultOptions.tooltip.yHistogram,
       category,
       showIf: (opts) => opts.tooltip.mode === TooltipDisplayMode.Single,
@@ -411,7 +411,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addBooleanSwitch({
       path: 'tooltip.showColorScale',
-      name: 'Show color scale',
+      name: 'Показать цветовую шкалу',
       defaultValue: defaultOptions.tooltip.showColorScale,
       category,
       showIf: (opts) => opts.tooltip.mode === TooltipDisplayMode.Single,
@@ -419,7 +419,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addNumberInput({
       path: 'tooltip.maxWidth',
-      name: 'Max width',
+      name: 'Максимальная ширина',
       category,
       settings: {
         integer: true,
@@ -429,7 +429,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
 
     builder.addNumberInput({
       path: 'tooltip.maxHeight',
-      name: 'Max height',
+      name: 'Максимальная высота',
       category,
       defaultValue: undefined,
       settings: {
@@ -441,7 +441,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     category = ['Legend'];
     builder.addBooleanSwitch({
       path: 'legend.show',
-      name: 'Show legend',
+      name: 'Показать легенду',
       defaultValue: defaultOptions.legend.show,
       category,
     });
@@ -449,7 +449,7 @@ export const plugin = new PanelPlugin<Options, GraphFieldConfig>(HeatmapPanel)
     category = ['Exemplars'];
     builder.addColorPicker({
       path: 'exemplars.color',
-      name: 'Color',
+      name: 'Цвет',
       defaultValue: defaultOptions.exemplars.color,
       category,
     });

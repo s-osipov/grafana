@@ -88,8 +88,8 @@ export const ValueMappingsEditor = memo((props: Props) => {
       </table>
 
       <Button variant="secondary" size="sm" fullWidth onClick={() => setIsEditorOpen(true)}>
-        {rows.length > 0 && <span>Edit value mappings</span>}
-        {rows.length === 0 && <span>Add value mappings</span>}
+        {rows.length > 0 && <span>Редактировать значение сопоставления</span>}
+        {rows.length === 0 && <span>Добавить значение сопоставления</span>}
       </Button>
       <Modal
         isOpen={isEditorOpen}

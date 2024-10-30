@@ -17,10 +17,10 @@ export interface Props {
 
 export type WeekStart = 'saturday' | 'sunday' | 'monday';
 const weekStarts: ComboboxOption[] = [
-  { value: '', label: 'Default' },
-  { value: 'saturday', label: 'Saturday' },
-  { value: 'sunday', label: 'Sunday' },
-  { value: 'monday', label: 'Monday' },
+  { value: '', label: 'По умолчанию' },
+  { value: 'saturday', label: 'Субботу' },
+  { value: 'sunday', label: 'Воскресенье' },
+  { value: 'monday', label: 'Понедельник' },
 ];
 
 const isWeekStart = (value: string): value is WeekStart => {

@@ -17,7 +17,7 @@ export const FieldNameByRegexMatcherEditor = memo<MatcherUIProps<string>>((props
     [onChange]
   );
 
-  return <Input placeholder="Enter regular expression" defaultValue={options} onBlur={onBlur} />;
+  return <Input placeholder="Введите регулярное выражение" defaultValue={options} onBlur={onBlur} />;
 });
 FieldNameByRegexMatcherEditor.displayName = 'FieldNameByRegexMatcherEditor';
 
@@ -25,7 +25,7 @@ export const fieldNameByRegexMatcherItem: FieldMatcherUIRegistryItem<string> = {
   id: FieldMatcherID.byRegexp,
   component: FieldNameByRegexMatcherEditor,
   matcher: fieldMatchers.get(FieldMatcherID.byRegexp),
-  name: 'Fields with name matching regex',
-  description: 'Set properties for fields with names matching a regex',
+  name: 'Поле с именем, соотвествующим регулярному выражению',
+  description: 'Установите свойства для полей с именами, соответствующими регулярному выражению',
   optionsToLabel: (options) => options,
 };

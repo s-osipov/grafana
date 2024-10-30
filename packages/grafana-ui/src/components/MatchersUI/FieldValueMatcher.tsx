@@ -70,7 +70,7 @@ export const FieldValueMatcherEditor = ({ options, onChange }: Props) => {
         value={reducer.current}
         options={reducer.options}
         onChange={onSetReducer}
-        placeholder="Select field reducer"
+        placeholder="Выберите редукцию поля"
       />
       {opts.reducer && !isBool && (
         <>
@@ -78,7 +78,7 @@ export const FieldValueMatcherEditor = ({ options, onChange }: Props) => {
             value={comparisonOperationOptions.find((v) => v.value === opts.op)}
             options={comparisonOperationOptions}
             onChange={onChangeOp}
-            aria-label={'Comparison operator'}
+            aria-label={'Оператор сравнения'}
             width={19}
           />
 
@@ -105,7 +105,7 @@ export const fieldValueMatcherItem: FieldMatcherUIRegistryItem<FieldValueMatcher
   id: FieldMatcherID.byValue,
   component: FieldValueMatcherEditor,
   matcher: fieldMatchers.get(FieldMatcherID.byValue),
-  name: 'Fields with values',
-  description: 'Set properties for fields with reducer condition',
+  name: 'Поле со значениями',
+  description: 'Установить свойства для полей с условием редукции',
   optionsToLabel: (options) => `${options?.reducer} ${options?.op} ${options?.value}`,
 };

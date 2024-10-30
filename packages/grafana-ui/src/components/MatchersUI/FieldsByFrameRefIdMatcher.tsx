@@ -123,7 +123,7 @@ export const fieldsByFrameRefIdItem: FieldMatcherUIRegistryItem<string> = {
     return <RefIDPicker value={props.options} data={props.data} onChange={props.onChange} />;
   },
   matcher: fieldMatchers.get(FieldMatcherID.byFrameRefID),
-  name: 'Fields returned by query',
-  description: 'Set properties for fields from a specific query',
+  name: 'Поля, возвращаемые запросом',
+  description: 'Установите свойства для полей из определенного запроса',
   optionsToLabel: (options) => options,
 };

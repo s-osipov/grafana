@@ -13,44 +13,44 @@ export function addLegendOptions<T extends OptionsWithLegend>(
     .addBooleanSwitch({
       path: 'legend.showLegend',
       name: 'Visibility',
-      category: ['Legend'],
+      category: ['Легенда'],
       description: '',
       defaultValue: showLegend,
     })
     .addRadio({
       path: 'legend.displayMode',
       name: 'Mode',
-      category: ['Legend'],
+      category: ['Легенда'],
       description: '',
       defaultValue: LegendDisplayMode.List,
       settings: {
         options: [
-          { value: LegendDisplayMode.List, label: 'List' },
-          { value: LegendDisplayMode.Table, label: 'Table' },
+          { value: LegendDisplayMode.List, label: 'Список' },
+          { value: LegendDisplayMode.Table, label: 'Таблица' },
         ],
       },
       showIf: (c) => c.legend.showLegend,
     })
     .addRadio({
       path: 'legend.placement',
-      name: 'Placement',
-      category: ['Legend'],
+      name: 'Расположение',
+      category: ['Легенда'],
       description: '',
       defaultValue: 'bottom',
       settings: {
         options: [
-          { value: 'bottom', label: 'Bottom' },
-          { value: 'right', label: 'Right' },
+          { value: 'bottom', label: 'Снизу' },
+          { value: 'right', label: 'Справа' },
         ],
       },
       showIf: (c) => c.legend.showLegend,
     })
     .addNumberInput({
       path: 'legend.width',
-      name: 'Width',
-      category: ['Legend'],
+      name: 'Ширина',
+      category: ['Легенда'],
       settings: {
-        placeholder: 'Auto',
+        placeholder: 'Авто',
       },
       showIf: (c) => c.legend.showLegend && c.legend.placement === 'right',
     });
@@ -59,9 +59,9 @@ export function addLegendOptions<T extends OptionsWithLegend>(
     builder.addCustomEditor<StatsPickerConfigSettings, string[]>({
       id: 'legend.calcs',
       path: 'legend.calcs',
-      name: 'Values',
-      category: ['Legend'],
-      description: 'Select values or calculations to show in legend',
+      name: 'Значения',
+      category: ['Легенда'],
+      description: 'Выберите значения или вычисления для отображения в легенде',
       editor: standardEditorsRegistry.get('stats-picker').editor,
       defaultValue: [],
       settings: {

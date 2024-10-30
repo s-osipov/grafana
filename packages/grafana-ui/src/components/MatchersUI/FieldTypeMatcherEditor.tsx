@@ -27,13 +27,13 @@ FieldTypeMatcherEditor.displayName = 'FieldTypeMatcherEditor';
 // Select options for all field types.
 // This is not eported to the published package, but used internally
 export const allFieldTypeIconOptions: Array<SelectableValue<FieldType>> = [
-  { value: FieldType.number, label: 'Number', icon: getFieldTypeIconName(FieldType.number) },
-  { value: FieldType.string, label: 'String', icon: getFieldTypeIconName(FieldType.string) },
-  { value: FieldType.time, label: 'Time', icon: getFieldTypeIconName(FieldType.time) },
-  { value: FieldType.boolean, label: 'Boolean', icon: getFieldTypeIconName(FieldType.boolean) },
+  { value: FieldType.number, label: 'Число', icon: getFieldTypeIconName(FieldType.number) },
+  { value: FieldType.string, label: 'Строка', icon: getFieldTypeIconName(FieldType.string) },
+  { value: FieldType.time, label: 'Время', icon: getFieldTypeIconName(FieldType.time) },
+  { value: FieldType.boolean, label: 'Логическое', icon: getFieldTypeIconName(FieldType.boolean) },
   { value: FieldType.trace, label: 'Traces', icon: getFieldTypeIconName(FieldType.trace) },
   { value: FieldType.enum, label: 'Enum', icon: getFieldTypeIconName(FieldType.enum) },
-  { value: FieldType.other, label: 'Other', icon: getFieldTypeIconName(FieldType.other) },
+  { value: FieldType.other, label: 'Другое', icon: getFieldTypeIconName(FieldType.other) },
 ];
 
 const useFieldCounts = (data: DataFrame[]): Map<FieldType, number> => {
@@ -87,7 +87,7 @@ export const fieldTypeMatcherItem: FieldMatcherUIRegistryItem<string> = {
   id: FieldMatcherID.byType,
   component: FieldTypeMatcherEditor,
   matcher: fieldMatchers.get(FieldMatcherID.byType),
-  name: 'Fields with type',
-  description: 'Set properties for fields of a specific type (number, string, boolean)',
+  name: 'Поля с типом',
+  description: 'Установите свойства для полей определенного типа (число, строка, логическое значение)',
   optionsToLabel: (options) => options,
 };

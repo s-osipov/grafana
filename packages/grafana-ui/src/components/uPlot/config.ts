@@ -24,60 +24,60 @@ export const graphFieldOptions: {
   thresholdsDisplayModes: Array<SelectableValue<GraphThresholdsStyleMode>>;
 } = {
   drawStyle: [
-    { label: 'Lines', value: GraphDrawStyle.Line },
-    { label: 'Bars', value: GraphDrawStyle.Bars },
-    { label: 'Points', value: GraphDrawStyle.Points },
+    { label: 'Линия', value: GraphDrawStyle.Line },
+    { label: 'Бар', value: GraphDrawStyle.Bars },
+    { label: 'Точки', value: GraphDrawStyle.Points },
   ],
 
   lineInterpolation: [
-    { description: 'Linear', value: LineInterpolation.Linear, icon: 'gf-interpolation-linear' },
-    { description: 'Smooth', value: LineInterpolation.Smooth, icon: 'gf-interpolation-smooth' },
-    { description: 'Step before', value: LineInterpolation.StepBefore, icon: 'gf-interpolation-step-before' },
-    { description: 'Step after', value: LineInterpolation.StepAfter, icon: 'gf-interpolation-step-after' },
+    { description: 'Линейная', value: LineInterpolation.Linear, icon: 'gf-interpolation-linear' },
+    { description: 'Гладкая', value: LineInterpolation.Smooth, icon: 'gf-interpolation-smooth' },
+    { description: 'Шаг до', value: LineInterpolation.StepBefore, icon: 'gf-interpolation-step-before' },
+    { description: 'Шаг после', value: LineInterpolation.StepAfter, icon: 'gf-interpolation-step-after' },
   ],
 
   barAlignment: [
-    { description: 'Before', value: BarAlignment.Before, icon: 'gf-bar-alignment-before' },
-    { description: 'Center', value: BarAlignment.Center, icon: 'gf-bar-alignment-center' },
-    { description: 'After', value: BarAlignment.After, icon: 'gf-bar-alignment-after' },
+    { description: 'Перед', value: BarAlignment.Before, icon: 'gf-bar-alignment-before' },
+    { description: 'По центу', value: BarAlignment.Center, icon: 'gf-bar-alignment-center' },
+    { description: 'После', value: BarAlignment.After, icon: 'gf-bar-alignment-after' },
   ],
 
   showPoints: [
-    { label: 'Auto', value: VisibilityMode.Auto, description: 'Show points when the density is low' },
-    { label: 'Always', value: VisibilityMode.Always },
-    { label: 'Never', value: VisibilityMode.Never },
+    { label: 'Авто', value: VisibilityMode.Auto, description: 'Показывать точки при низкой плотности' },
+    { label: 'Всегда', value: VisibilityMode.Always },
+    { label: 'Никогда', value: VisibilityMode.Never },
   ],
 
   axisPlacement: [
-    { label: 'Auto', value: AxisPlacement.Auto, description: 'First field on the left, everything else on the right' },
-    { label: 'Left', value: AxisPlacement.Left },
-    { label: 'Right', value: AxisPlacement.Right },
-    { label: 'Hidden', value: AxisPlacement.Hidden },
+    { label: 'Авто', value: AxisPlacement.Auto, description: 'Первое поле слева, все остальное справа' },
+    { label: 'Слева', value: AxisPlacement.Left },
+    { label: 'Справа', value: AxisPlacement.Right },
+    { label: 'Скрытый', value: AxisPlacement.Hidden },
   ],
 
   fillGradient: [
-    { label: 'None', value: GraphGradientMode.None },
-    { label: 'Opacity', value: GraphGradientMode.Opacity, description: 'Enable fill opacity gradient' },
-    { label: 'Hue', value: GraphGradientMode.Hue, description: 'Small color hue gradient' },
+    { label: 'Нет', value: GraphGradientMode.None },
+    { label: 'Непрозрачность', value: GraphGradientMode.Opacity, description: 'Включить градиент непрозрачности заливки' },
+    { label: 'Оттенок', value: GraphGradientMode.Hue, description: 'Небольшой градиент цветового оттенка' },
     {
-      label: 'Scheme',
+      label: 'Схема',
       value: GraphGradientMode.Scheme,
-      description: 'Use color scheme to define gradient',
+      description: 'Используйте цветовую схему для определения градиента',
     },
   ],
 
   stacking: [
-    { label: 'Off', value: StackingMode.None },
-    { label: 'Normal', value: StackingMode.Normal },
+    { label: 'Выкл', value: StackingMode.None },
+    { label: 'Нормальный', value: StackingMode.Normal },
     { label: '100%', value: StackingMode.Percent },
   ],
 
   thresholdsDisplayModes: [
-    { label: 'Off', value: GraphThresholdsStyleMode.Off },
-    { label: 'As lines', value: GraphThresholdsStyleMode.Line },
-    { label: 'As lines (dashed)', value: GraphThresholdsStyleMode.Dashed },
-    { label: 'As filled regions', value: GraphThresholdsStyleMode.Area },
-    { label: 'As filled regions and lines', value: GraphThresholdsStyleMode.LineAndArea },
-    { label: 'As filled regions and lines (dashed)', value: GraphThresholdsStyleMode.DashedAndArea },
+    { label: 'Выкл', value: GraphThresholdsStyleMode.Off },
+    { label: 'Как линия', value: GraphThresholdsStyleMode.Line },
+    { label: 'Как линия (пунктирная)', value: GraphThresholdsStyleMode.Dashed },
+    { label: 'Как заполненная область', value: GraphThresholdsStyleMode.Area },
+    { label: 'Как заполненная область и линия', value: GraphThresholdsStyleMode.LineAndArea },
+    { label: 'Как заполненная область и линия (пунктирная)', value: GraphThresholdsStyleMode.DashedAndArea },
   ],
 };
